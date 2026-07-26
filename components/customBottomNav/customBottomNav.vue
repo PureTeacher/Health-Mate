@@ -14,7 +14,7 @@
             @click="navigateToUser"
         >
             <text class="nav-icon">👤</text>
-            <text class="nav-text">个人中心</text>
+            <text class="nav-text">我的</text>
         </view>
     </view>
 </template>

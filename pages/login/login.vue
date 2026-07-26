@@ -15,11 +15,8 @@
             </view>
             <!-- 标题图片 -->
             <view class="title">
-                <image
-                    src="/static/title.png"
-                    class="title-image"
-                    mode="aspectFit"
-                ></image>
+                <text class="title-text">轻益点</text>
+                <text class="title-subtitle">瘦益斐浅体重与代谢健康管理</text>
             </view>
             <!-- 用户名密码表单 -->
             <view class="form">
@@ -81,7 +78,7 @@
 export default {
     data() {
         return {
-            title: "择途",
+            title: "轻益点",
             modalShow: false,
             retrievePwd: {
                 username: "",
@@ -374,7 +371,7 @@ export default {
         z-index: 1;
         // #ifndef H5
         height: 90vh;
-        // endif
+        // #endif
         animation: fadeInDown 1s cubic-bezier(0.34, 1.56, 0.64, 1);
 
         .logo {
@@ -396,6 +393,9 @@ export default {
             margin-top: 20px;
             animation: slideInUp 0.9s cubic-bezier(0.34, 1.56, 0.64, 1) 0.3s
                 backwards;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .title-image {
@@ -406,11 +406,20 @@ export default {
         }
 
         .title-text {
-            font-size: 40px;
+            display: block;
+            font-size: 42px;
             font-weight: 700;
             color: #60a5fa;
             letter-spacing: 2rpx;
             animation: subtleShimmer 3s ease-in-out infinite;
+        }
+
+        .title-subtitle {
+            display: block;
+            margin-top: 8px;
+            font-size: 14px;
+            color: #64748b;
+            letter-spacing: 1rpx;
         }
 
         .form {

@@ -6,14 +6,14 @@
         {
             "path": "pages/index/index",
             "style": {
-                "navigationBarTitleText": "我的收藏",
+                "navigationBarTitleText": "轻益点",
                 "navigationStyle": "custom"
             }
         },
         {
             "path": "pages/message/message",
             "style": {
-                "navigationBarTitleText": "",
+                "navigationBarTitleText": "AI健康顾问",
                 "navigationBarBackgroundColor": "#3b82f6",
                 "navigationBarTextStyle": "white"
             }
@@ -28,14 +28,14 @@
         {
             "path": "pages/login/login",
             "style": {
-                "navigationBarTitleText": "我的收藏",
+                "navigationBarTitleText": "登录",
                 "navigationStyle": "custom"
             }
         },
         {
             "path": "pages/register/register",
             "style": {
-                "navigationBarTitleText": "我的收藏",
+                "navigationBarTitleText": "注册",
                 "navigationStyle": "custom"
             }
         },
@@ -49,7 +49,7 @@
         {
             "path": "pages/phq7-test/index",
             "style": {
-                "navigationBarTitleText": "",
+                "navigationBarTitleText": "健康自测",
                 "navigationBarBackgroundColor": "#3b82f6",
                 "navigationBarTextStyle": "white"
             }
@@ -57,7 +57,7 @@
         {
             "path": "pages/phq7-test/do-test",
             "style": {
-                "navigationBarTitleText": "",
+                "navigationBarTitleText": "健康评估",
                 "navigationBarBackgroundColor": "#3b82f6",
                 "navigationBarTextStyle": "white"
             }
@@ -65,7 +65,7 @@
         {
             "path": "pages/phq7-test/history",
             "style": {
-                "navigationBarTitleText": "",
+                "navigationBarTitleText": "自测记录",
                 "navigationBarBackgroundColor": "#3b82f6",
                 "navigationBarTextStyle": "white"
             }
@@ -73,7 +73,7 @@
         {
             "path": "pages/phq7-test/gad7",
             "style": {
-                "navigationBarTitleText": "",
+                "navigationBarTitleText": "生活方式评估",
                 "navigationBarBackgroundColor": "#3b82f6",
                 "navigationBarTextStyle": "white"
             }
@@ -81,7 +81,7 @@
         {
             "path": "pages/phq7-test/cpss",
             "style": {
-                "navigationBarTitleText": "",
+                "navigationBarTitleText": "代谢风险初筛",
                 "navigationBarBackgroundColor": "#3b82f6",
                 "navigationBarTextStyle": "white"
             }
@@ -89,7 +89,7 @@
         {
             "path": "pages/phq7-test/ucla",
             "style": {
-                "navigationBarTitleText": "",
+                "navigationBarTitleText": "长期管理准备度",
                 "navigationBarBackgroundColor": "#3b82f6",
                 "navigationBarTextStyle": "white"
             }
@@ -97,7 +97,7 @@
         {
             "path": "pages/phq7-test/psqi",
             "style": {
-                "navigationBarTitleText": "",
+                "navigationBarTitleText": "睡眠质量评估",
                 "navigationBarBackgroundColor": "#3b82f6",
                 "navigationBarTextStyle": "white"
             }
@@ -105,7 +105,7 @@
         {
             "path": "pages/phq7-test/sds",
             "style": {
-                "navigationBarTitleText": "",
+                "navigationBarTitleText": "产品体验反馈",
                 "navigationBarBackgroundColor": "#3b82f6",
                 "navigationBarTextStyle": "white"
             }
@@ -113,7 +113,7 @@
         {
             "path": "pages/phq7-test/its",
             "style": {
-                "navigationBarTitleText": "",
+                "navigationBarTitleText": "情绪与食欲评估",
                 "navigationBarBackgroundColor": "#3b82f6",
                 "navigationBarTextStyle": "white"
             }
@@ -121,7 +121,7 @@
         {
             "path": "pages/health/index",
             "style": {
-                "navigationBarTitleText": "",
+                "navigationBarTitleText": "科普内容",
                 "navigationBarBackgroundColor": "#3b82f6",
                 "navigationBarTextStyle": "white"
             }
@@ -129,7 +129,7 @@
         {
             "path": "pages/psychologist/index",
             "style": {
-                "navigationBarTitleText": "",
+                "navigationBarTitleText": "健康顾问",
                 "navigationBarBackgroundColor": "#3b82f6",
                 "navigationBarTextStyle": "white"
             }
@@ -137,7 +137,7 @@
         {
             "path": "pages/psychologist/appointment",
             "style": {
-                "navigationBarTitleText": "",
+                "navigationBarTitleText": "预约顾问",
                 "navigationBarBackgroundColor": "#3b82f6",
                 "navigationBarTextStyle": "white"
             }
@@ -145,7 +145,7 @@
         {
             "path": "pages/psychologist/record",
             "style": {
-                "navigationBarTitleText": "",
+                "navigationBarTitleText": "预约记录",
                 "navigationBarBackgroundColor": "#3b82f6",
                 "navigationBarTextStyle": "white"
             }
@@ -153,7 +153,7 @@
         {
             "path": "pages/user/index",
             "style": {
-                "navigationBarTitleText": "",
+                "navigationBarTitleText": "我的",
                 "navigationBarBackgroundColor": "#3b82f6",
                 "navigationBarTextStyle": "white"
             }
@@ -161,7 +161,7 @@
         {
             "path": "pages/user/settings",
             "style": {
-                "navigationBarTitleText": "",
+                "navigationBarTitleText": "设置",
                 "navigationBarBackgroundColor": "#3b82f6",
                 "navigationBarTextStyle": "white"
             }
@@ -169,7 +169,7 @@
         {
             "path": "pages/user/account",
             "style": {
-                "navigationBarTitleText": "",
+                "navigationBarTitleText": "账号管理",
                 "navigationBarBackgroundColor": "#3b82f6",
                 "navigationBarTextStyle": "white"
             }
@@ -177,7 +177,7 @@
         {
             "path": "pages/user/change-password",
             "style": {
-                "navigationBarTitleText": "",
+                "navigationBarTitleText": "修改密码",
                 "navigationBarBackgroundColor": "#3b82f6",
                 "navigationBarTextStyle": "white"
             }
@@ -185,7 +185,7 @@
         {
             "path": "pages/help/index",
             "style": {
-                "navigationBarTitleText": "",
+                "navigationBarTitleText": "帮助中心",
                 "navigationBarBackgroundColor": "#3b82f6",
                 "navigationBarTextStyle": "white"
             }
@@ -193,7 +193,7 @@
         {
             "path": "pages/feedback/index",
             "style": {
-                "navigationBarTitleText": "",
+                "navigationBarTitleText": "反馈",
                 "navigationBarBackgroundColor": "#3b82f6",
                 "navigationBarTextStyle": "white"
             }
@@ -201,7 +201,7 @@
         {
             "path": "pages/about/index",
             "style": {
-                "navigationBarTitleText": "",
+                "navigationBarTitleText": "关于我们",
                 "navigationBarBackgroundColor": "#3b82f6",
                 "navigationBarTextStyle": "white"
             }
@@ -230,7 +230,7 @@
                 "pagePath": "pages/user/index",
                 "iconPath": "/static/tab-user.png",
                 "selectedIconPath": "/static/tab-user-active.png",
-                "text": "个人中心"
+                "text": "我的"
             }
         ]
     },

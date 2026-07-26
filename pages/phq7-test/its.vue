@@ -109,7 +109,7 @@
                     </view>
 
                     <view class="level-section">
-                        <text class="level-label">信任水平</text>
+                        <text class="level-label">产品体验反馈</text>
                         <text
                             class="level-value"
                             :class="getLevelClass(resultData.skillsLevel)"
@@ -148,13 +148,13 @@
 export default {
     data() {
         return {
-            themeColor: "#52c41a", // 主色调 - 绿色代表信任评估
+            themeColor: "#52c41a", // 主色调 - 绿色代表产品体验反馈
             answers: [], // 初始化空数组
             questions: [
                 {
                     id: 1,
                     type: "skills",
-                    text: "我相信多数同事会履行承诺",
+                    text: "我清楚轻益点或AKK菌相关产品的使用方式",
                     options: [
                         { text: "完全不同意", desc: "0分", score: 0 },
                         { text: "不同意", desc: "3分", score: 3 },
@@ -166,7 +166,7 @@ export default {
                 {
                     id: 2,
                     type: "skills",
-                    text: "我认为团队成员通常值得信赖",
+                    text: "我能按照建议记录产品使用时间和频次",
                     options: [
                         { text: "完全不同意", desc: "0分", score: 0 },
                         { text: "不同意", desc: "3分", score: 3 },
@@ -178,7 +178,7 @@ export default {
                 {
                     id: 3,
                     type: "skills",
-                    text: "在协作中，大多数人会如实反馈进度",
+                    text: "我愿意如实反馈产品使用后的身体感受",
                     options: [
                         { text: "完全不同意", desc: "0分", score: 0 },
                         { text: "不同意", desc: "3分", score: 3 },
@@ -190,7 +190,7 @@ export default {
                 {
                     id: 4,
                     type: "skills",
-                    text: "跨团队合作时，我愿意先给予基本信任",
+                    text: "我愿意在授权范围内让顾问查看必要健康记录",
                     options: [
                         { text: "完全不同意", desc: "0分", score: 0 },
                         { text: "不同意", desc: "3分", score: 3 },
@@ -202,7 +202,7 @@ export default {
                 {
                     id: 5,
                     type: "skills",
-                    text: "我认为同事大多会公平对待他人",
+                    text: "我认为当前产品说明和随访提醒比较清楚",
                     options: [
                         { text: "完全不同意", desc: "0分", score: 0 },
                         { text: "不同意", desc: "3分", score: 3 },
@@ -214,7 +214,7 @@ export default {
                 {
                     id: 6,
                     type: "skills",
-                    text: "遇到问题时，我相信同事愿意互相支持",
+                    text: "遇到问题时，我知道可以通过轻益点获得随访支持",
                     options: [
                         { text: "完全不同意", desc: "0分", score: 0 },
                         { text: "不同意", desc: "3分", score: 3 },
@@ -226,7 +226,7 @@ export default {
                 {
                     id: 7,
                     type: "skills",
-                    text: "我相信大多数人会对结果负责",
+                    text: "我能理解产品体验需要结合饮食、运动和睡眠观察",
                     options: [
                         { text: "完全不同意", desc: "0分", score: 0 },
                         { text: "不同意", desc: "3分", score: 3 },
@@ -238,7 +238,7 @@ export default {
                 {
                     id: 8,
                     type: "skills",
-                    text: "我倾向于相信他人不会故意推卸责任",
+                    text: "我愿意持续记录体重、腰围和肠道相关反馈",
                     options: [
                         { text: "完全不同意", desc: "0分", score: 0 },
                         { text: "不同意", desc: "3分", score: 3 },
@@ -250,7 +250,7 @@ export default {
                 {
                     id: 9,
                     type: "skills",
-                    text: "我相信直属同事会在关键时刻配合",
+                    text: "我愿意在出现不适时暂停自行加量并咨询专业人员",
                     options: [
                         { text: "完全不同意", desc: "0分", score: 0 },
                         { text: "不同意", desc: "3分", score: 3 },
@@ -262,7 +262,7 @@ export default {
                 {
                     id: 10,
                     type: "skills",
-                    text: "我相信跨部门伙伴会尊重协作规则",
+                    text: "我信任轻益点会在用户授权下保护健康数据",
                     options: [
                         { text: "完全不同意", desc: "0分", score: 0 },
                         { text: "不同意", desc: "3分", score: 3 },
@@ -274,7 +274,7 @@ export default {
                 {
                     id: 11,
                     type: "skills",
-                    text: "我相信公开沟通能减少误解和猜疑",
+                    text: "我认为清晰反馈有助于后续服务建议更贴合自己",
                     options: [
                         { text: "完全不同意", desc: "0分", score: 0 },
                         { text: "不同意", desc: "3分", score: 3 },
@@ -286,7 +286,7 @@ export default {
                 {
                     id: 12,
                     type: "skills",
-                    text: "整体而言，我对团队信任氛围评价较高",
+                    text: "整体而言，我对当前产品体验和随访服务评价较高",
                     options: [
                         { text: "完全不同意", desc: "0分", score: 0 },
                         { text: "不同意", desc: "3分", score: 3 },
@@ -343,12 +343,12 @@ export default {
                     icon: "/static/icons/trust.png",
                 },
                 mood: {
-                    text: "工作热情评估",
+                    text: "产品体验反馈",
                     color: "#FF6B81",
                     icon: "/static/icons/mood.png",
                 },
                 anxiety: {
-                    text: "压力管理",
+                    text: "使用反馈参考",
                     color: "#FFA500",
                     icon: "/static/icons/anxiety.png",
                 },
@@ -356,7 +356,7 @@ export default {
             };
             return (
                 types[this.currentQuestion.type] || {
-                    text: "职场测评",
+                    text: "轻益点健康自测",
                     color: this.themeColor,
                     icon: "/static/icons/psychology.png",
                 }
@@ -443,35 +443,35 @@ export default {
                 0,
             );
 
-            // 根据10分制标准判断核心技能评估（12题，总分0-120）
+            // 根据10分制标准判断产品体验反馈（12题，总分0-120）
             let skillsLevel = "";
             let levelDescription = "";
             let suggestion = "";
 
             if (totalScore >= 0 && totalScore <= 24) {
-                skillsLevel = "信任度待建立";
+                skillsLevel = "体验待跟进";
                 levelDescription =
-                    "您在职场中的信任度和可靠性方面存在明显问题，需要重点改进。";
+                    "您对产品使用方式、反馈记录或随访支持的理解仍需加强。";
                 suggestion =
-                    "1. 进行深度反思，识别破坏信任的具体行为\n2. 制定改正计划，明确承诺并严格执行\n3. 改进沟通方式，提高信息的透明度和准确性\n4. 寻求反馈，接受批评，持续改进";
+                    "1. 建议先阅读产品使用说明，并按建议频次记录体验\n2. 可通过轻益点顾问确认打卡字段和随访方式\n3. 如出现明显不适或疑似不良反应，建议及时咨询医生\n4. 产品体验结果仅供服务跟进参考";
             } else if (totalScore >= 25 && totalScore <= 48) {
-                skillsLevel = "信任度一般";
+                skillsLevel = "体验反馈一般";
                 levelDescription =
-                    "您具有基本的职业道德和合作意识，但在某些方面的可靠性仍需加强。";
+                    "您已有基本使用和反馈意识，但记录完整度和问题反馈仍建议加强。";
                 suggestion =
-                    "1. 识别信任薄弱环节，制定针对性改进计划\n2. 加强与同事的沟通和反馈机制\n3. 做到言行一致，提高承诺的兑现率\n4. 参加职业素养或领导力培训";
+                    "1. 建议继续记录产品使用时间、饮食运动和身体反馈\n2. 对不确定的体验可先向顾问咨询，不建议自行加量\n3. 可参考轻益点基础服务层完成连续打卡\n4. 涉及基础病、用药或严重不适时，建议咨询医生";
             } else if (totalScore >= 49 && totalScore <= 72) {
-                skillsLevel = "信任度较好";
+                skillsLevel = "体验反馈较好";
                 levelDescription =
-                    "您在团队中获得了较好的信任和认可，具有较强的协作和可靠性。";
+                    "您的产品体验记录较好，可能有助于后续随访和服务建议更准确。";
                 suggestion =
-                    "1. 继续保持良好的职业操守和承诺执行力\n2. 主动承担更多责任和挑战性工作\n3. 成为信任的传播者，帮助建立积极的团队文化\n4. 考虑担任信任监督或合规角色";
+                    "1. 建议按周汇总体重、腰围、肠道反馈和精力变化\n2. 可预约顾问复盘产品体验与管理计划\n3. 继续关注隐私授权范围和数据安全提示\n4. 测评和AI建议仅作参考";
             } else if (totalScore >= 73 && totalScore <= 120) {
-                skillsLevel = "信任度优秀";
+                skillsLevel = "体验反馈积极";
                 levelDescription =
-                    "您在职场中建立了极高的信任度和声誉，是团队的核心和标杆人物。";
+                    "您的产品使用记录和反馈意愿较积极，可作为长期随访和复购服务参考。";
                 suggestion =
-                    "1. 成为信任的倡导者和模范，引领团队文化\n2. 承担信任监督或合规管理的更高职责\n3. 指导和培养其他成员的信任能力\n4. 利用信任资产推动重要项目和组织变革";
+                    "1. 建议继续保持真实反馈，便于轻益点提供阶段性服务建议\n2. 可结合趋势报告观察产品体验与生活方式变化\n3. 复购或套餐选择建议基于个人体验、顾问建议和预算综合判断\n4. 产品不能代替药物或治疗，异常不适请及时咨询医生";
             }
 
             // 设置结果数据并显示弹窗
@@ -516,16 +516,16 @@ export default {
             this.scrollToTop();
         },
         getLevelClass(level) {
-            if (level.includes("低信任")) return "level-low";
-            if (level.includes("中等信任")) return "level-moderate";
-            if (level.includes("较高信任")) return "level-high";
-            if (level.includes("高信任")) return "level-very-high";
+            if (level.includes("待跟进")) return "level-low";
+            if (level.includes("一般")) return "level-moderate";
+            if (level.includes("较好")) return "level-high";
+            if (level.includes("积极")) return "level-very-high";
             return "level-moderate";
         },
         // 保存测试结果到数据库
         async saveTestResultToDatabase() {
             const requestData = {
-                questionnaireName: "ITS人际信任量表",
+                questionnaireName: "轻益点产品体验反馈",
                 questionnaireType: "social",
                 score: this.resultData.totalScore,
                 depressionLevel: this.resultData.skillsLevel,

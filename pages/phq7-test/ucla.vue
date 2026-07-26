@@ -109,7 +109,7 @@
                     </view>
 
                     <view class="level-section">
-                        <text class="level-label">职场孤立感水平</text>
+                        <text class="level-label">情绪支持水平</text>
                         <text
                             class="level-value"
                             :class="getLevelClass(resultData.growthLevel)"
@@ -150,13 +150,13 @@
 export default {
     data() {
         return {
-            themeColor: "#FF6B81", // 主色调 - 粉色代表职场孤立感评估
+            themeColor: "#FF6B81", // 主色调 - 粉色代表情绪支持评估
             answers: [], // 初始化空数组
             questions: [
                 {
                     id: 1,
                     type: "development",
-                    text: "在团队中，我常觉得自己被边缘化",
+                    text: "我能觉察体重管理过程中出现的压力和情绪波动",
                     options: [
                         { text: "从不", desc: "0分", score: 0 },
                         { text: "很少", desc: "3分", score: 3 },
@@ -167,7 +167,7 @@ export default {
                 {
                     id: 2,
                     type: "development",
-                    text: "在工作交流里，我常觉得不被重视",
+                    text: "我愿意把饮食、运动或体重波动带来的情绪记录下来",
                     options: [
                         { text: "从不", desc: "0分", score: 0 },
                         { text: "很少", desc: "3分", score: 3 },
@@ -178,7 +178,7 @@ export default {
                 {
                     id: 3,
                     type: "development",
-                    text: "我能在团队中建立稳定连接",
+                    text: "我能和家人、朋友或顾问建立稳定的健康管理支持",
                     options: [
                         { text: "从不", desc: "0分", score: 0 },
                         { text: "很少", desc: "3分", score: 3 },
@@ -189,7 +189,7 @@ export default {
                 {
                     id: 4,
                     type: "development",
-                    text: "同事通常能理解我的表达意图",
+                    text: "我能清楚表达自己的身体感受和产品体验",
                     options: [
                         { text: "从不", desc: "0分", score: 0 },
                         { text: "很少", desc: "3分", score: 3 },
@@ -200,7 +200,7 @@ export default {
                 {
                     id: 5,
                     type: "development",
-                    text: "我常感觉难以融入团队氛围",
+                    text: "我能在计划受阻时重新回到打卡和随访节奏",
                     options: [
                         { text: "从不", desc: "0分", score: 0 },
                         { text: "很少", desc: "3分", score: 3 },
@@ -211,7 +211,7 @@ export default {
                 {
                     id: 6,
                     type: "development",
-                    text: "我在工作中能找到值得信任的伙伴",
+                    text: "我能找到愿意支持我长期健康管理的人",
                     options: [
                         { text: "从不", desc: "0分", score: 0 },
                         { text: "很少", desc: "3分", score: 3 },
@@ -222,7 +222,7 @@ export default {
                 {
                     id: 7,
                     type: "development",
-                    text: "我在协作中常有孤军作战的感受",
+                    text: "我愿意在遇到困难时主动寻求健康顾问支持",
                     options: [
                         { text: "从不", desc: "0分", score: 0 },
                         { text: "很少", desc: "3分", score: 3 },
@@ -233,7 +233,7 @@ export default {
                 {
                     id: 8,
                     type: "development",
-                    text: "我的观点在团队中通常会被接纳",
+                    text: "我的体重管理目标能被身边支持者理解和尊重",
                     options: [
                         { text: "从不", desc: "0分", score: 0 },
                         { text: "很少", desc: "3分", score: 3 },
@@ -244,7 +244,7 @@ export default {
                 {
                     id: 9,
                     type: "development",
-                    text: "我常觉得被同事有意无意忽视",
+                    text: "当身体反馈异常时，我愿意及时记录并咨询专业人员",
                     options: [
                         { text: "从不", desc: "0分", score: 0 },
                         { text: "很少", desc: "3分", score: 3 },
@@ -255,7 +255,7 @@ export default {
                 {
                     id: 10,
                     type: "development",
-                    text: "遇到困难时，我能获得及时支持",
+                    text: "遇到执行困难时，我能获得及时支持",
                     options: [
                         { text: "从不", desc: "0分", score: 0 },
                         { text: "很少", desc: "3分", score: 3 },
@@ -266,7 +266,7 @@ export default {
                 {
                     id: 11,
                     type: "development",
-                    text: "我常觉得与团队节奏脱节",
+                    text: "我能根据自己的生活节奏调整健康管理计划",
                     options: [
                         { text: "从不", desc: "0分", score: 0 },
                         { text: "很少", desc: "3分", score: 3 },
@@ -277,7 +277,7 @@ export default {
                 {
                     id: 12,
                     type: "development",
-                    text: "我能比较自然地发起职业社交",
+                    text: "我能比较自然地向顾问反馈饮食、睡眠和情绪变化",
                     options: [
                         { text: "从不", desc: "0分", score: 0 },
                         { text: "很少", desc: "3分", score: 3 },
@@ -288,7 +288,7 @@ export default {
                 {
                     id: 13,
                     type: "development",
-                    text: "跨部门沟通时，我常感到不自在",
+                    text: "我能在随访沟通中说明自己的担忧和疑问",
                     options: [
                         { text: "从不", desc: "0分", score: 0 },
                         { text: "很少", desc: "3分", score: 3 },
@@ -299,7 +299,7 @@ export default {
                 {
                     id: 14,
                     type: "development",
-                    text: "我能与同事保持舒适的沟通边界",
+                    text: "我能与顾问或家人保持舒适的沟通边界",
                     options: [
                         { text: "从不", desc: "0分", score: 0 },
                         { text: "很少", desc: "3分", score: 3 },
@@ -310,7 +310,7 @@ export default {
                 {
                     id: 15,
                     type: "development",
-                    text: "在会议中，我常觉得自己没有存在感",
+                    text: "我能认可自己在长期管理中的小进步",
                     options: [
                         { text: "从不", desc: "0分", score: 0 },
                         { text: "很少", desc: "3分", score: 3 },
@@ -321,7 +321,7 @@ export default {
                 {
                     id: 16,
                     type: "development",
-                    text: "我愿意主动建立新的工作连接",
+                    text: "我愿意主动建立新的健康支持连接",
                     options: [
                         { text: "从不", desc: "0分", score: 0 },
                         { text: "很少", desc: "3分", score: 3 },
@@ -332,7 +332,7 @@ export default {
                 {
                     id: 17,
                     type: "development",
-                    text: "我常担心在协作中被误解",
+                    text: "我能在被误解或受挫时尝试说明真实情况",
                     options: [
                         { text: "从不", desc: "0分", score: 0 },
                         { text: "很少", desc: "3分", score: 3 },
@@ -343,7 +343,7 @@ export default {
                 {
                     id: 18,
                     type: "development",
-                    text: "我能在团队中表达真实观点",
+                    text: "我能在健康管理中表达真实感受",
                     options: [
                         { text: "从不", desc: "0分", score: 0 },
                         { text: "很少", desc: "3分", score: 3 },
@@ -354,7 +354,7 @@ export default {
                 {
                     id: 19,
                     type: "development",
-                    text: "我常觉得缺少可以深度交流的同事",
+                    text: "我知道可以通过轻益点随访渠道获得阶段反馈",
                     options: [
                         { text: "从不", desc: "0分", score: 0 },
                         { text: "很少", desc: "3分", score: 3 },
@@ -365,7 +365,7 @@ export default {
                 {
                     id: 20,
                     type: "development",
-                    text: "整体上，我对当前职场社交状态满意",
+                    text: "整体上，我对当前健康管理支持状态较满意",
                     options: [
                         { text: "从不", desc: "0分", score: 0 },
                         { text: "很少", desc: "3分", score: 3 },
@@ -421,12 +421,12 @@ export default {
                     icon: "/static/icons/social.png",
                 },
                 mood: {
-                    text: "工作热情评估",
+                    text: "情绪支持评估",
                     color: "#FFA500",
                     icon: "/static/icons/mood.png",
                 },
                 anxiety: {
-                    text: "压力管理",
+                    text: "情绪管理参考",
                     color: "#FFA500",
                     icon: "/static/icons/anxiety.png",
                 },
@@ -434,7 +434,7 @@ export default {
             };
             return (
                 types[this.currentQuestion.type] || {
-                    text: "职场测评",
+                    text: "轻益点健康自测",
                     color: this.themeColor,
                     icon: "/static/icons/psychology.png",
                 }
@@ -521,35 +521,35 @@ export default {
                 0,
             );
 
-            // 根据10分制标准判断职业成长空间（20题，总分0-200）
+            // 根据10分制标准判断情绪支持水平（20题，总分0-200）
             let growthLevel = "";
             let levelDescription = "";
             let suggestion = "";
 
             if (totalScore >= 0 && totalScore <= 40) {
-                growthLevel = "成长空间待开发";
+                growthLevel = "支持基础待建立";
                 levelDescription =
-                    "您在团队中存在明显的融入困难，缺乏信任基础，职业成长空间受到较大限制。";
+                    "您在情绪觉察、支持来源和随访沟通方面基础较弱，结果仅供健康管理参考。";
                 suggestion =
-                    "1. 进行深度自我反思，了解团队融入的障碍原因\n2. 改进沟通方式和表达能力，提高理解和被理解的程度\n3. 建立专业人脉网络，参与团队活动和协作\n4. 必要时考虑寻找更匹配的工作环境";
+                    "1. 建议先记录睡眠、情绪、饮食波动和身体反馈\n2. 可选择一位可信任的家人、朋友或顾问作为支持对象\n3. 如长期情绪低落、持续担忧、失眠或严重不适，建议咨询医生或心理专业人员\n4. 测评和AI建议不能替代医生判断";
             } else if (totalScore >= 41 && totalScore <= 80) {
-                growthLevel = "成长空间基本";
+                growthLevel = "支持水平基本";
                 levelDescription =
-                    "您与团队有基本的合作，但融入度不够充分，成长空间有限。";
+                    "您已有一定支持基础，但情绪记录和主动求助习惯仍建议继续加强。";
                 suggestion =
-                    "1. 主动承担团队贡献，建立信任和好感度\n2. 提升沟通效率，多参与团队决策和讨论\n3. 建立更深层的人际关系和协作网络\n4. 积极争取项目机会，展示能力和价值";
+                    "1. 建议把情绪、睡眠和食欲变化纳入每日打卡\n2. 可预约健康顾问复盘阶段阻力和产品体验\n3. 遇到明显身体不适或用药问题，建议咨询医生\n4. 可参考轻益点基础服务层获得持续提醒和科普内容";
             } else if (totalScore >= 81 && totalScore <= 120) {
-                growthLevel = "成长空间较优";
+                growthLevel = "支持水平较好";
                 levelDescription =
-                    "您能较好地融入团队，获得同事和上级的认可，具有良好的成长环境。";
+                    "您的情绪觉察和支持沟通较好，可能有助于长期健康管理稳定推进。";
                 suggestion =
-                    "1. 在基础信任的基础上，承担更有挑战的工作\n2. 建立更深层的人际关系和合作网络\n3. 把握晋升或转岗机会，加速职业成长\n4. 反思和总结成功经验，形成个人发展优势";
+                    "1. 建议继续通过打卡记录压力来源和恢复方式\n2. 可结合趋势报告观察情绪、睡眠和体重变化关系\n3. 适合进入顾问随访，细化饮食运动与情绪支持方案\n4. 如出现严重或持续不适，建议及时就医";
             } else if (totalScore >= 121 && totalScore <= 200) {
-                growthLevel = "成长空间优秀";
+                growthLevel = "支持水平稳定";
                 levelDescription =
-                    "您完全融入团队，建立了深厚的信任和良好的人际关系，拥有广阔的发展空间。";
+                    "您的支持系统和沟通意愿较稳定，可作为长期体重与代谢健康管理的积极基础。";
                 suggestion =
-                    "1. 充分发挥优势，担任关键或领导角色\n2. 成为团队的核心人才，积极推动项目成功\n3. 建立个人品牌和影响力，考虑职业晋升\n4. 开发新的能力和方向，为更高层次的发展做准备";
+                    "1. 建议保持规律复盘，关注身体、睡眠和情绪的综合变化\n2. 可参考轻益点增值或尊享服务层进行阶段性随访\n3. 继续记录产品体验和可能的不适反应\n4. 健康建议仅供参考，涉及基础病、用药或严重不适请咨询医生";
             }
 
             // 设置结果数据并显示弹窗
@@ -594,16 +594,16 @@ export default {
             this.scrollToTop();
         },
         getLevelClass(level) {
-            if (level.includes("低职场孤立感")) return "level-normal";
-            if (level.includes("中等职场孤立感")) return "level-mild";
-            if (level.includes("较高职场孤立感")) return "level-moderate";
-            if (level.includes("高职场孤立感")) return "level-severe";
+            if (level.includes("稳定")) return "level-normal";
+            if (level.includes("较好")) return "level-mild";
+            if (level.includes("基本")) return "level-moderate";
+            if (level.includes("待建立")) return "level-severe";
             return "level-normal";
         },
         // 保存测试结果到数据库
         async saveTestResultToDatabase() {
             const requestData = {
-                questionnaireName: "职场归属感与团队融入量表",
+                questionnaireName: "轻益点情绪支持与随访准备评估",
                 questionnaireType: "social",
                 score: this.resultData.totalScore,
                 depressionLevel: this.resultData.growthLevel,

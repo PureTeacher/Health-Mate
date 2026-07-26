@@ -5,7 +5,7 @@
                 <text class="section-title">应用信息</text>
                 <view class="item">
                     <text class="label">应用名称</text>
-                    <text class="value">择途</text>
+                    <text class="value">轻益点</text>
                 </view>
                 <view class="item">
                     <text class="label">版本号</text>
@@ -14,7 +14,7 @@
                 <view class="item">
                     <text class="label">描述</text>
                     <text class="value">
-                        择途是一款专业的职业发展管理应用，致力于为用户提供科学、便捷的职业成长服务。
+                        轻益点是一款体重与代谢健康管理应用，围绕 AKK 菌产品服务、健康自测、AI 顾问、健康档案和随访支持，为用户提供科学、持续、可追踪的健康管理参考。
                     </text>
                 </view>
             </view>
@@ -23,7 +23,7 @@
                 <text class="section-title">联系我们</text>
                 <view class="item">
                     <text class="label">邮箱</text>
-                    <text class="value">support@offermate.com</text>
+                    <text class="value">support@bioslim.com</text>
                 </view>
                 <view class="item">
                     <text class="label">电话</text>
@@ -38,13 +38,13 @@
             <view class="section">
                 <text class="section-title">法律声明</text>
                 <text class="tips">
-                    本应用所有内容仅供参考，不能替代专业职业建议。如有关键职业决策问题，请咨询专业职业导师。
+                    本应用所有健康内容仅供参考，不能替代医生诊断或治疗建议。如有疾病、用药或严重不适问题，请咨询医生。
                 </text>
             </view>
 
             <view class="footer">
                 <text class="footer-text"
-                    >© 2026 择途. All rights reserved.</text
+                    >© 2026 瘦益斐浅. All rights reserved.</text
                 >
             </view>
         </view>

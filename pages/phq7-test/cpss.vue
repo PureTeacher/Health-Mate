@@ -111,7 +111,7 @@
                     </view>
 
                     <view class="level-section">
-                        <text class="level-label">压力水平</text>
+                        <text class="level-label">饮食运动执行力</text>
                         <text
                             class="level-value"
                             :class="getLevelClass(resultData.developmentLevel)"
@@ -158,7 +158,7 @@ export default {
                 {
                     id: 1,
                     type: "development",
-                    text: "你是否具备足够的专业核心竞争力",
+                    text: "你是否能保持相对规律的三餐或轻食安排",
                     options: [
                         { text: "从不", score: 0 },
                         { text: "很少", score: 3 },
@@ -170,7 +170,7 @@ export default {
                 {
                     id: 2,
                     type: "development",
-                    text: "你的职业技能是否满足市场需求",
+                    text: "你是否能主动控制高糖、高油或夜宵摄入频次",
                     options: [
                         { text: "从不", score: 0 },
                         { text: "很少", score: 3 },
@@ -182,7 +182,7 @@ export default {
                 {
                     id: 3,
                     type: "development",
-                    text: "你是否能够胜任目标岗位的工作内容",
+                    text: "你是否能根据自身情况安排每周适量运动",
                     options: [
                         { text: "从不", score: 0 },
                         { text: "很少", score: 3 },
@@ -194,7 +194,7 @@ export default {
                 {
                     id: 4,
                     type: "development",
-                    text: "你是否能够有效应对职业发展中的挑战",
+                    text: "你是否很少因外食或聚餐打乱当天管理计划",
                     options: [
                         { text: "从不", score: 10 },
                         { text: "很少", score: 6 },
@@ -206,7 +206,7 @@ export default {
                 {
                     id: 5,
                     type: "development",
-                    text: "你对职业发展的前景和机会充满信心",
+                    text: "你是否很少因情绪波动出现明显加餐或暴食",
                     options: [
                         { text: "从不", score: 10 },
                         { text: "很少", score: 6 },
@@ -218,7 +218,7 @@ export default {
                 {
                     id: 6,
                     type: "development",
-                    text: "你是否具备在职业市场中的竞争优势",
+                    text: "你是否很少因忙碌而完全中断饮食运动记录",
                     options: [
                         { text: "从不", score: 10 },
                         { text: "很少", score: 6 },
@@ -230,7 +230,7 @@ export default {
                 {
                     id: 7,
                     type: "development",
-                    text: "你的薪资期望是否与市场行情相符",
+                    text: "你是否了解自己的每日饮水和膳食纤维摄入情况",
                     options: [
                         { text: "从不", score: 0 },
                         { text: "很少", score: 3 },
@@ -242,7 +242,7 @@ export default {
                 {
                     id: 8,
                     type: "development",
-                    text: "你是否定期提升自己的职业竞争力",
+                    text: "你是否会定期复盘饮食运动对体重和腰围的影响",
                     options: [
                         { text: "从不", score: 0 },
                         { text: "很少", score: 3 },
@@ -254,7 +254,7 @@ export default {
                 {
                     id: 9,
                     type: "development",
-                    text: "你的行业经验是否能够为职业加分",
+                    text: "你是否会记录AKK菌产品使用后的身体反馈",
                     options: [
                         { text: "从不", score: 0 },
                         { text: "很少", score: 3 },
@@ -266,7 +266,7 @@ export default {
                 {
                     id: 10,
                     type: "development",
-                    text: "你是否有明确的职业发展路径规划",
+                    text: "你是否有明确的每周饮食、运动和打卡安排",
                     options: [
                         { text: "从不", score: 0 },
                         { text: "很少", score: 3 },
@@ -278,7 +278,7 @@ export default {
                 {
                     id: 11,
                     type: "development",
-                    text: "你是否能够快速适应职业环境的变化",
+                    text: "你是否能根据身体状态灵活调整运动强度",
                     options: [
                         { text: "从不", score: 0 },
                         { text: "很少", score: 3 },
@@ -290,7 +290,7 @@ export default {
                 {
                     id: 12,
                     type: "development",
-                    text: "你的人脉和资源是否有利于职业发展",
+                    text: "你是否能获得家人、朋友或顾问的健康管理支持",
                     options: [
                         { text: "从不", score: 0 },
                         { text: "很少", score: 3 },
@@ -302,7 +302,7 @@ export default {
                 {
                     id: 13,
                     type: "development",
-                    text: "你是否获得过职业相关的奖项或认可",
+                    text: "你是否能从阶段变化中获得持续管理的信心",
                     options: [
                         { text: "从不", score: 0 },
                         { text: "很少", score: 3 },
@@ -314,7 +314,7 @@ export default {
                 {
                     id: 14,
                     type: "development",
-                    text: "你是否相信自己能实现职业目标",
+                    text: "你是否相信自己能坚持温和、长期的体重管理计划",
                     options: [
                         { text: "从不", score: 0 },
                         { text: "很少", score: 3 },
@@ -371,12 +371,12 @@ export default {
                     icon: "/static/icons/stress.png",
                 },
                 mood: {
-                    text: "工作热情评估",
+                    text: "饮食运动状态",
                     color: "#FFA500",
                     icon: "/static/icons/mood.png",
                 },
                 anxiety: {
-                    text: "压力管理",
+                    text: "执行风险参考",
                     color: "#FFA500",
                     icon: "/static/icons/anxiety.png",
                 },
@@ -384,7 +384,7 @@ export default {
             };
             return (
                 types[this.currentQuestion.type] || {
-                    text: "职场测评",
+                    text: "轻益点健康自测",
                     color: this.themeColor,
                     icon: "/static/icons/psychology.png",
                 }
@@ -471,35 +471,35 @@ export default {
                 0,
             );
 
-            // 根据10分制标准判断职业竞争力（14题，总分0-140）
+            // 根据10分制标准判断饮食运动执行力（14题，总分0-140）
             let developmentLevel = "";
             let levelDescription = "";
             let suggestion = "";
 
             if (totalScore >= 0 && totalScore <= 28) {
-                developmentLevel = "竞争力待提升";
+                developmentLevel = "执行基础待建立";
                 levelDescription =
-                    "您在核心专业能力、技能匹配度和应对挑战能力方面都有明显不足。";
+                    "您的饮食、运动和记录习惯基础较弱，当前结果仅作健康管理参考。";
                 suggestion =
-                    "1. 进行系统的职业技能培训，重点提升专业核心能力\n2. 参加行业认证课程或进修，提高学位和资历\n3. 通过项目或竞赛积累专业经验\n4. 建立导师制度，获得业内人士的指导";
+                    "1. 建议从每天一项小打卡开始，如体重、饮水或步数\n2. 饮食调整建议循序渐进，避免过度节食\n3. 可参考轻益点基础服务层获得提醒和科普内容\n4. 如有基础病、用药或运动禁忌，建议先咨询医生";
             } else if (totalScore >= 29 && totalScore <= 56) {
-                developmentLevel = "竞争力一般";
+                developmentLevel = "执行力一般";
                 levelDescription =
-                    "您具备基本的职业素质，但在某些关键能力上存在明显短板。";
+                    "您已有部分饮食运动意识，但稳定性和复盘习惯仍建议加强。";
                 suggestion =
-                    "1. 进行能力评估，明确最薄弱的环节\n2. 有针对性地参加培训或深造，补齐短板\n3. 通过项目或竞赛积累专业经验\n4. 拓展知识广度，培养跨领域能力";
+                    "1. 建议固定每周3-5天轻中强度活动，按身体情况调整\n2. 记录高糖高油、夜宵和情绪进食等触发场景\n3. 可预约健康顾问复盘执行阻力\n4. 测评结果不能替代医生或营养师的个体化判断";
             } else if (totalScore >= 57 && totalScore <= 84) {
-                developmentLevel = "竞争力较强";
+                developmentLevel = "执行力较好";
                 levelDescription =
-                    "您具有较强的专业能力和市场竞争力，在多个方面表现均衡。";
+                    "您的饮食运动执行力较好，可能有助于形成稳定的体重管理节奏。";
                 suggestion =
-                    "1. 深耕专业领域，形成差异化的专业优势\n2. 参与复杂项目或管理工作，积累高端经验\n3. 建立个人品牌和专业声誉\n4. 考虑向领导力或其他专业方向发展";
+                    "1. 建议继续结合体重、腰围、睡眠和情绪做趋势复盘\n2. 可参考轻益点增值服务层细化阶段目标\n3. 产品体验和身体反馈建议同步记录\n4. 如出现明显不适、异常疲劳或指标异常，建议及时就医";
             } else if (totalScore >= 85 && totalScore <= 140) {
-                developmentLevel = "竞争力优秀";
+                developmentLevel = "执行力稳定";
                 levelDescription =
-                    "您具有卓越的职业能力和明显的市场竞争优势，是行业内的优秀人才。";
+                    "您的饮食运动与记录习惯较稳定，可作为长期管理和随访的良好基础。";
                 suggestion =
-                    "1. 抓住高端机会，担任更具挑战的角色\n2. 分享经验，培养后进人才，建立影响力\n3. 积极寻求创新项目和战略性发展机会\n4. 规划长期职业前景，考虑创业或转型的可能性";
+                    "1. 建议保持长期打卡，避免因短期波动频繁大幅调整\n2. 可结合趋势报告观察体重、腰围和精力变化\n3. 适合进一步进行顾问随访或尊享服务复盘\n4. AI和测评建议仅供参考，不能替代医生判断";
             }
 
             // 设置结果数据并显示弹窗
@@ -552,7 +552,7 @@ export default {
         // 保存测试结果到数据库
         async saveTestResultToDatabase() {
             const requestData = {
-                questionnaireName: "CPSS创伤后应激量表",
+                questionnaireName: "轻益点饮食运动执行力评估",
                 questionnaireType: "stress",
                 score: this.resultData.totalScore,
                 depressionLevel: this.resultData.developmentLevel,

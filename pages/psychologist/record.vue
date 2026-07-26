@@ -17,7 +17,7 @@
       <view v-if="records.length === 0" class="empty-state">
         <text class="empty-emoji">📋</text>
         <text class="empty-text">暂无预约记录</text>
-        <text class="empty-desc">您还没有预约过任何导师</text>
+        <text class="empty-desc">您还没有预约过健康顾问或服务点</text>
       </view>
       
       <view v-else style="margin-top: 10px;">
@@ -91,9 +91,9 @@
         
         <view class="detail-body">
           <view class="detail-section">
-            <text class="section-label">导师信息</text>
+            <text class="section-label">顾问信息</text>
             <view class="info-row">
-              <text class="info-label">导师姓名</text>
+              <text class="info-label">顾问姓名</text>
               <text class="info-value">{{selectedRecord.doctorName}}</text>
             </view>
           </view>
@@ -713,4 +713,3 @@ export default {
   }
 }
 </style>
-

@@ -29,28 +29,28 @@
                     :class="{ active: currentFilter === 'mood' }"
                     @click="filterByType('mood')"
                 >
-                    <text>🎯 目标规划</text>
+                    <text>📋 健康建档</text>
                 </view>
                 <view
                     class="filter-item"
                     :class="{ active: currentFilter === 'stress' }"
                     @click="filterByType('stress')"
                 >
-                    <text>💪 竞争力评估</text>
+                    <text>🥗 饮食运动</text>
                 </view>
                 <view
                     class="filter-item"
                     :class="{ active: currentFilter === 'social' }"
                     @click="filterByType('social')"
                 >
-                    <text>🌱 成长与技能</text>
+                    <text>💗 情绪支持</text>
                 </view>
                 <view
                     class="filter-item"
                     :class="{ active: currentFilter === 'sleep' }"
                     @click="filterByType('sleep')"
                 >
-                    <text>🚀 准备与转型</text>
+                    <text>🌙 睡眠随访</text>
                 </view>
             </scroll-view>
         </view>
@@ -60,7 +60,7 @@
             <view v-if="filteredResults.length === 0" class="empty-state">
                 <text class="empty-emoji">📊</text>
                 <text class="empty-text">暂无测评记录</text>
-                <text class="empty-desc">开始您的第一次职业测评吧</text>
+                <text class="empty-desc">开始您的第一次轻益点健康自测吧</text>
             </view>
 
             <view v-else>
@@ -158,7 +158,7 @@
                     </view>
 
                     <view class="detail-section" v-if="selectedItem.suggestion">
-                        <text class="section-label">专业建议</text>
+                        <text class="section-label">参考建议</text>
                         <text class="section-value suggestion">{{
                             selectedItem.suggestion
                         }}</text>
@@ -199,28 +199,34 @@ export default {
                 const testName = item.questionnaireName.toLowerCase();
                 if (this.currentFilter === "mood") {
                     return (
-                        testName.includes("定位") ||
+                        testName.includes("建档") ||
+                        testName.includes("bmi") ||
                         testName.includes("目标") ||
+                        testName.includes("服务") ||
                         testName.includes("phq") ||
                         testName.includes("gad")
                     );
                 } else if (this.currentFilter === "stress") {
                     return (
-                        testName.includes("竞争") ||
+                        testName.includes("饮食") ||
+                        testName.includes("运动") ||
                         testName.includes("cpss") ||
                         testName.includes("pss")
                     );
                 } else if (this.currentFilter === "social") {
                     return (
-                        testName.includes("成长") ||
-                        testName.includes("技能") ||
+                        testName.includes("情绪") ||
+                        testName.includes("支持") ||
+                        testName.includes("体验") ||
                         testName.includes("ucla") ||
                         testName.includes("its")
                     );
                 } else if (this.currentFilter === "sleep") {
                     return (
-                        testName.includes("准备") ||
-                        testName.includes("转型") ||
+                        testName.includes("睡眠") ||
+                        testName.includes("精力") ||
+                        testName.includes("中断") ||
+                        testName.includes("随访") ||
                         testName.includes("psqi") ||
                         testName.includes("sds")
                     );
@@ -275,23 +281,34 @@ export default {
 
         getTestName(testName) {
             const nameMap = {
-                职业定位自测: "职业定位自测",
-                职业目标可行性评估: "职业目标可行性评估",
-                职业竞争力评估: "职业竞争力评估",
-                职业成长空间评估: "职业成长空间评估",
-                核心职业技能测评: "核心职业技能测评",
-                职业发展准备度测评: "职业发展准备度测评",
-                职业转型风险评估: "职业转型风险评估",
-                // 兼容旧数据
-                职业性格特质筛查量表: "职业定位自测",
-                职场压力耐受度筛查量表: "职业竞争力评估",
-                CPSS创伤后应激量表: "职业竞争力评估",
-                职场归属感与团队融入量表: "职业成长空间评估",
-                ITS人际信任量表: "核心职业技能测评",
-                PSQI求职期作息与精力评估表: "职业发展准备度测评",
-                SDS作息失调量表: "职业转型风险评估",
+                轻益点健康建档与BMI自测: "轻益点健康建档与BMI自测",
+                轻益点体重目标与服务建议: "轻益点体重目标与服务建议",
+                轻益点饮食运动执行力评估: "轻益点饮食运动执行力评估",
+                轻益点情绪支持与随访准备评估:
+                    "轻益点情绪支持与随访准备评估",
+                轻益点睡眠与精力自测: "轻益点睡眠与精力自测",
+                轻益点长期管理中断风险评估:
+                    "轻益点长期管理中断风险评估",
+                轻益点产品体验反馈: "轻益点产品体验反馈",
             };
-            return nameMap[testName] || testName;
+            if (nameMap[testName]) return nameMap[testName];
+
+            if (testName && testName.toUpperCase().includes("CPSS")) {
+                return "轻益点饮食运动执行力评估";
+            }
+            if (testName && testName.toUpperCase().includes("UCLA")) {
+                return "轻益点情绪支持与随访准备评估";
+            }
+            if (testName && testName.toUpperCase().includes("ITS")) {
+                return "轻益点产品体验反馈";
+            }
+            if (testName && testName.toUpperCase().includes("PSQI")) {
+                return "轻益点睡眠与精力自测";
+            }
+            if (testName && testName.toUpperCase().includes("SDS")) {
+                return "轻益点长期管理中断风险评估";
+            }
+            return "轻益点健康自测";
         },
 
         getTestDisplayName(testName) {
@@ -301,17 +318,19 @@ export default {
         getTestEmoji(testName) {
             const name = testName.toLowerCase();
             if (
-                name.includes("职业定位") ||
+                name.includes("建档") ||
+                name.includes("bmi") ||
                 name.includes("phq") ||
                 name.includes("do-test")
             )
-                return "🎯";
-            if (name.includes("目标") || name.includes("gad")) return "✅";
-            if (name.includes("竞争") || name.includes("cpss")) return "💪";
-            if (name.includes("成长") || name.includes("ucla")) return "🌱";
-            if (name.includes("技能") || name.includes("its")) return "🔧";
-            if (name.includes("准备") || name.includes("psqi")) return "🚀";
-            if (name.includes("转型") || name.includes("sds")) return "⚖️";
+                return "📋";
+            if (name.includes("目标") || name.includes("gad")) return "🎯";
+            if (name.includes("饮食") || name.includes("运动") || name.includes("cpss"))
+                return "🥗";
+            if (name.includes("情绪") || name.includes("ucla")) return "💗";
+            if (name.includes("体验") || name.includes("its")) return "🧾";
+            if (name.includes("睡眠") || name.includes("psqi")) return "🌙";
+            if (name.includes("中断") || name.includes("sds")) return "🔁";
             return "📊";
         },
 
@@ -338,7 +357,7 @@ export default {
 
         getScoreClass(level) {
             if (!level) return "score-normal";
-            // 新的职业评估等级判断
+            // 新的健康自测等级判断
             if (
                 level.includes("优秀") ||
                 level.includes("极低") ||

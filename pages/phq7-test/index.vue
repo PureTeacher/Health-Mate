@@ -7,7 +7,7 @@
         <view class="guide-area">
             <text class="guide-emoji">☀️</text>
             <view class="guide-speech">
-                <text>Hi~ 我是你的职业助手小晴！\n先做测评，再匹配导师哦~</text>
+                <text>Hi~ 我是轻益点健康助手！\n先做自测，再匹配服务方案哦~</text>
             </view>
         </view>
 
@@ -83,22 +83,22 @@ export default {
             currentTest: {},
             categories: [
                 {
-                    name: "职业目标规划",
+                    name: "体重管理",
                     emoji: "🎯",
                     type: "planning",
                 },
                 {
-                    name: "职业发展路径",
+                    name: "生活方式",
                     emoji: "🚀",
                     type: "development",
                 },
                 {
-                    name: "职业技能评估",
+                    name: "睡眠情绪",
                     emoji: "💡",
                     type: "skills",
                 },
                 {
-                    name: "职业转型规划",
+                    name: "产品反馈",
                     emoji: "🔄",
                     type: "transformation",
                 },
@@ -106,8 +106,8 @@ export default {
             testList: [
                 {
                     id: "phq7",
-                    title: "职业定位自测",
-                    description: "评估你的职业兴趣与适配度",
+                    title: "BMI与体重目标评估",
+                    description: "评估体重状态与管理目标",
                     emoji: "🎯",
                     questionCount: 9,
                     duration: 3,
@@ -115,12 +115,12 @@ export default {
                     path: "/pages/phq7-test/do-test",
                     isNew: false,
                     detailDescription:
-                        "本测评帮助你深入了解自身的职业兴趣、职业价值观和职业能力，识别最匹配的发展方向。共9个问题。\n\n结果参考：\n0-10分：职业定位模糊\n11-20分：有初步定位\n21-27分：定位较清晰\n28-27分：定位非常清晰",
+                        "本自测用于了解身高体重、腰围、目标体重和基础生活习惯，帮助生成健康管理参考建议。结果仅供参考，不能替代医生诊断。",
                 },
                 {
                     id: "gad7",
-                    title: "职业目标可行性评估",
-                    description: "评估你的职业目标执行能力",
+                    title: "饮食运动习惯评估",
+                    description: "了解饮食结构、运动频率与执行难点",
                     emoji: "✅",
                     path: "/pages/phq7-test/gad7",
                     questionCount: 7,
@@ -128,12 +128,12 @@ export default {
                     type: "planning",
                     isNew: true,
                     detailDescription:
-                        "本测评评估你设定的职业目标是否具有可行性，帮你识别实现目标的关键障碍与资源。\n\n结果参考：\n0-8分：目标可行性较弱\n9-16分：基本可行\n17-24分：较为可行\n25+分：高度可行",
+                        "本自测用于了解饮食、运动、久坐、加餐等习惯，帮助匹配基础服务、增值服务或尊享服务建议。",
                 },
                 {
                     id: "cpss",
-                    title: "职业竞争力评估",
-                    description: "评估你在职业市场中的竞争优势",
+                    title: "代谢风险初筛",
+                    description: "记录基础代谢相关风险因素",
                     emoji: "💪",
                     questionCount: 14,
                     duration: 5,
@@ -141,12 +141,12 @@ export default {
                     path: "/pages/phq7-test/cpss",
                     isNew: false,
                     detailDescription:
-                        "本测评帮助你全面认识自己的职业竞争力，包括核心技能、专业素养、行业认知度等维度。\n\n结果参考：\n总分越高，职业竞争力越强",
+                        "本自测用于记录血糖、血脂、脂肪肝、家族史等基础风险因素。如存在明确疾病或用药问题，请咨询医生。",
                 },
                 {
                     id: "ucla",
-                    title: "职业成长空间评估",
-                    description: "评估你的职业发展潜力",
+                    title: "长期管理准备度",
+                    description: "评估打卡、随访和家庭支持情况",
                     emoji: "🌱",
                     questionCount: 20,
                     duration: 5,
@@ -154,12 +154,12 @@ export default {
                     path: "/pages/phq7-test/ucla",
                     isNew: false,
                     detailDescription:
-                        "本测评评估你在当前职业路径中的成长空间、进阶可能性和自我提升能力。",
+                        "本自测用于了解你是否适合进入长期打卡、顾问随访和阶段趋势报告管理。",
                 },
                 {
                     id: "its",
-                    title: "核心职业技能测评",
-                    description: "评估你的关键职业能力",
+                    title: "情绪与食欲评估",
+                    description: "观察情绪进食、压力和食欲波动",
                     emoji: "🔧",
                     questionCount: 12,
                     duration: 4,
@@ -167,12 +167,12 @@ export default {
                     path: "/pages/phq7-test/its",
                     isNew: false,
                     detailDescription:
-                        "本测评评估你在沟通、分析、领导力等核心职业技能方面的水平，帮助你发现优势与改进方向。",
+                        "本自测用于了解压力、情绪进食和食欲波动情况，帮助生成生活方式参考建议。",
                 },
                 {
                     id: "psqi",
-                    title: "职业发展准备度测评",
-                    description: "评估你是否做好职业发展准备",
+                    title: "睡眠质量评估",
+                    description: "观察睡眠时长、质量和白天精力",
                     emoji: "🚀",
                     questionCount: 7,
                     duration: 3,
@@ -180,12 +180,12 @@ export default {
                     path: "/pages/phq7-test/psqi",
                     isNew: false,
                     detailDescription:
-                        "本测评评估你的职业发展准备度，包括知识储备、心理准备、行动计划等方面。",
+                        "本自测用于了解睡眠与体重管理之间的关联，结果仅供健康管理参考。",
                 },
                 {
                     id: "sds",
-                    title: "职业转型风险评估",
-                    description: "评估转型的可行性与风险",
+                    title: "产品体验反馈",
+                    description: "记录使用体验、依从性与身体反馈",
                     emoji: "⚖️",
                     questionCount: 10,
                     duration: 4,
@@ -193,7 +193,7 @@ export default {
                     path: "/pages/phq7-test/sds",
                     isNew: false,
                     detailDescription:
-                        "本测评帮助你评估职业转型的风险与机遇，为转型决策提供科学依据。",
+                        "本反馈用于记录产品口感、服用便捷性、依从性和身体感受，帮助后续服务优化。",
                 },
             ],
         };

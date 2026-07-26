@@ -7,7 +7,7 @@
         <view class="header">
             <!-- <view class="header-left">
         <text class="back-arrow" @click="goBack">⬅️</text>
-        <text class="header-title">职业导师</text>
+        <text class="header-title">健康顾问</text>
       </view> -->
             <view class="header-right">
                 <view class="appointment-record" @click="goToAppointmentRecord">
@@ -17,7 +17,7 @@
             </view>
         </view>
         <!-- <view class="header-subtitle">
-      <text class="subtitle-text">专业职业导师团队</text>
+      <text class="subtitle-text">健康顾问与服务点</text>
     </view> -->
 
         <!-- 搜索栏 -->
@@ -26,18 +26,18 @@
                 <text class="search-icon">🔍</text>
                 <input
                     class="search-input"
-                    placeholder="搜索导师姓名或专业领域"
+                    placeholder="搜索顾问姓名、营养师或服务点"
                     v-model="searchKeyword"
                     @input="handleSearch"
                 />
             </view>
         </view>
 
-        <!-- 导师列表 -->
+        <!-- 顾问列表 -->
         <view class="doctor-list" v-if="!loading">
             <view v-if="filteredDoctors.length === 0" class="empty-state">
                 <text class="empty-emoji">🏥</text>
-                <text class="empty-text">暂无匹配的导师</text>
+                <text class="empty-text">暂无匹配的顾问</text>
                 <text class="empty-desc">请尝试其他筛选条件</text>
             </view>
 
@@ -118,7 +118,7 @@
                                 class="appointment-btn"
                                 @click.stop="makeAppointment(doctor)"
                             >
-                                预约导师
+                                预约顾问
                             </button>
                         </view>
                     </view>
@@ -132,7 +132,7 @@
             <text class="loading-text">加载中...</text>
         </view>
 
-        <!-- 导师详情弹窗 -->
+        <!-- 顾问详情弹窗 -->
         <view class="detail-modal" v-if="showDetail" @click="closeDetail">
             <view class="detail-content" @click.stop>
                 <view class="detail-header">
@@ -218,7 +218,7 @@
                         class="detail-appointment-btn"
                         @click="makeAppointment(selectedDoctor)"
                     >
-                        预约导师
+                        预约顾问
                     </button>
                 </view>
             </view>
@@ -242,16 +242,16 @@ export default {
                     gender: "女",
                     age: 35,
                     experience: 8,
-                    title: "首席职业导师",
+                    title: "首席健康顾问",
                     avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=doctor1&backgroundColor=b6e3f4",
                     rating: 4.9,
                     reviewCount: 1286,
                     isOnline: true,
-                    specialties: ["职业定位", "职业发展规划", "职业倦怠调适"],
+                    specialties: ["体重管理", "饮食记录", "打卡随访"],
                     introduction:
-                        "职业规划专家，通过科学的职业测评和深度访谈，帮助学员发现自己的职业天赋，制定清晰的职业发展路线。",
+                        "健康管理顾问，擅长结合健康自测、饮食运动习惯和阶段打卡记录，为用户提供体重管理参考建议。",
                     background:
-                        "北京大学管理学博士，中科院职业研究院博士后，国家二级职业导师，从事职业咨询8年。",
+                        "营养与健康管理方向顾问，从事体重管理和用户随访服务8年。",
                     consultationCount: 3240,
                     successRate: 94,
                     responseTime: 15,
@@ -263,16 +263,16 @@ export default {
                     gender: "男",
                     age: 42,
                     experience: 12,
-                    title: "副首席职业导师",
+                    title: "营养健康顾问",
                     avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=doctor2&backgroundColor=c7a2ff",
                     rating: 4.8,
                     reviewCount: 2156,
                     isOnline: false,
-                    specialties: ["职业转型", "中年职业危机", "职业回归"],
+                    specialties: ["营养建议", "代谢风险", "长期管理"],
                     introduction:
-                        "职业转型专家，具有丰富的职业转行经验，擅长帮助职场人士平稳过渡职业转换期，规避转换风险。",
+                        "营养健康顾问，擅长为超重、久坐和饮食不规律用户提供饮食运动参考建议。",
                     background:
-                        "清华大学管理学硕士，美国加州大学访问学者，家庭辅导师认证，从业12年。",
+                        "公共营养与健康管理背景，从事慢病风险管理和营养咨询服务12年。",
                     consultationCount: 4560,
                     successRate: 92,
                     responseTime: 20,
@@ -284,20 +284,20 @@ export default {
                     gender: "女",
                     age: 38,
                     experience: 10,
-                    title: "职业发展导师",
+                    title: "社区服务点顾问",
                     avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=doctor3&backgroundColor=ffd1dc",
                     rating: 4.9,
                     reviewCount: 1890,
                     isOnline: true,
                     specialties: [
-                        "职业目标确立",
-                        "升学就业指导",
-                        "校园招聘指导",
+                        "社区筛查",
+                        "健康建档",
+                        "服务点随访",
                     ],
                     introduction:
-                        "应届毕业生职业指导专家，帮助学生清晰职业方向，准备校园招聘，平稳过渡校园到职场的转变。",
+                        "社区健康服务点顾问，负责健康自测登记、基础数据记录和活动随访支持。",
                     background:
-                        "北京师范大学管理学博士，学习成长研究所研究员，沙盘游戏辅导师，从业10年。",
+                        "社区健康服务与用户运营背景，从事健康宣教和活动随访10年。",
                     consultationCount: 2890,
                     successRate: 96,
                     responseTime: 12,
@@ -309,20 +309,20 @@ export default {
                     gender: "男",
                     age: 45,
                     experience: 15,
-                    title: "首席职业导师",
+                    title: "代谢管理顾问",
                     avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=doctor4&backgroundColor=ffb3ba",
                     rating: 4.7,
                     reviewCount: 3240,
                     isOnline: true,
                     specialties: [
-                        "职业危机应对",
-                        "职业挫折恢复",
-                        "失业心态调整",
+                        "BMI管理",
+                        "腰围记录",
+                        "平台期复盘",
                     ],
                     introduction:
-                        "职业危机干预专家，经验丰富，帮助失业、被裁员或面临职业困境的学员快速调整心态，重新规划职业方向。",
+                        "代谢管理顾问，擅长帮助用户复盘 BMI、腰围、体重趋势和生活方式变化。",
                     background:
-                        "复旦大学管理学博士，国际职业转型师认证，职业危机应对专家，从业15年。",
+                        "健康管理与运动营养背景，从事体重管理服务15年。",
                     consultationCount: 5670,
                     successRate: 89,
                     responseTime: 25,
@@ -330,20 +330,20 @@ export default {
                 },
                 {
                     id: 5,
-                    name: "刘美玲",
+                    name: "刘晓曼",
                     gender: "女",
-                    age: 33,
-                    experience: 7,
-                    title: "职业发展导师",
+                    age: 36,
+                    experience: 9,
+                    title: "饮食记录顾问",
                     avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=doctor5&backgroundColor=bae1ff",
                     rating: 4.8,
                     reviewCount: 1560,
                     isOnline: true,
-                    specialties: ["职场人际关系", "职场沟通技巧", "领导力发展"],
+                    specialties: ["饮食复盘", "控糖控脂", "家庭餐建议"],
                     introduction:
-                        "职场人际关系专家，帮助职场人士处理复杂的人际关系，提升沟通效能，建立健康的工作关系。",
+                        "饮食记录顾问，擅长帮助用户复盘日常饮食结构，给出更容易坚持的餐食调整参考。",
                     background:
-                        "华东师范大学管理学硕士，情感导师认证，人际关系辅导师，从业7年。",
+                        "营养健康服务背景，从事饮食记录、体重管理和用户陪跑服务9年。",
                     consultationCount: 2130,
                     successRate: 93,
                     responseTime: 18,
@@ -355,20 +355,20 @@ export default {
                     gender: "男",
                     age: 50,
                     experience: 18,
-                    title: "首席职业导师",
+                    title: "高级健康管理顾问",
                     avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=doctor6&backgroundColor=ffdfba",
                     rating: 4.9,
                     reviewCount: 4120,
                     isOnline: false,
                     specialties: [
-                        "高管coaching",
-                        "职业生涯后期规划",
-                        "精英职场发展",
+                        "慢病风险提示",
+                        "指标复盘",
+                        "阶段方案调整",
                     ],
                     introduction:
-                        "高级职业顾问，专注于企业中高层和资深职场人士的职业发展，提供高端coaching服务。",
+                        "高级健康管理顾问，擅长结合 BMI、腰围、血压血糖等用户授权数据，提供阶段管理参考。",
                     background:
-                        "中山大学管理学博士，老年职业发展研究中心所长，认知行为辅导师，从业18年。",
+                        "健康管理与公共卫生背景，从事代谢风险筛查和长期随访服务18年。",
                     consultationCount: 6780,
                     successRate: 91,
                     responseTime: 30,
@@ -380,20 +380,20 @@ export default {
                     gender: "女",
                     age: 36,
                     experience: 9,
-                    title: "职业发展导师",
+                    title: "睡眠情绪顾问",
                     avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=doctor7&backgroundColor=ffffba",
                     rating: 4.8,
                     reviewCount: 1980,
                     isOnline: true,
                     specialties: [
-                        "职业发展路径设计",
-                        "职业压力管理",
-                        "工作生活平衡",
+                        "睡眠习惯",
+                        "压力饮食",
+                        "生活节律",
                     ],
                     introduction:
-                        "职场成长导师，专长于制定个性化的职业发展计划，帮助职场人士管理职业压力，实现可持续发展。",
+                        "睡眠情绪顾问，关注睡眠、压力和食欲变化对体重管理的影响，提供生活节律建议。",
                     background:
-                        "中国人民大学管理学硕士，职业规划师认证，压力管理专家，从业9年。",
+                        "心理健康教育与健康管理背景，从事睡眠习惯记录和压力饮食支持9年。",
                     consultationCount: 2670,
                     successRate: 95,
                     responseTime: 16,
@@ -405,20 +405,20 @@ export default {
                     gender: "男",
                     age: 41,
                     experience: 11,
-                    title: "副首席职业导师",
+                    title: "运动健康顾问",
                     avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=doctor8&backgroundColor=baffc9",
                     rating: 4.7,
                     reviewCount: 2890,
                     isOnline: true,
                     specialties: [
-                        "职业习惯养成",
-                        "职业能力重建",
-                        "职场快速适应",
+                        "运动入门",
+                        "久坐改善",
+                        "体能记录",
                     ],
                     introduction:
-                        "职业习惯与能力重塑专家，帮助职场人士养成良好职业习惯，快速适应新职位，重建职业能力体系。",
+                        "运动健康顾问，擅长为久坐、运动基础较弱的用户设计循序渐进的活动记录建议。",
                     background:
-                        "武汉大学管理学博士，习惯重塑师认证，行为治疗专家，从业11年。",
+                        "运动健康与用户随访背景，从事基础运动指导和体能记录服务11年。",
                     consultationCount: 3890,
                     successRate: 88,
                     responseTime: 22,
@@ -430,16 +430,16 @@ export default {
                     gender: "女",
                     age: 39,
                     experience: 10,
-                    title: "职业发展导师",
+                    title: "女性健康顾问",
                     avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=doctor9&backgroundColor=ffb3d1",
                     rating: 4.9,
                     reviewCount: 2340,
                     isOnline: false,
-                    specialties: ["女性职业发展", "职业回归指导", "母职平衡"],
+                    specialties: ["女性体重管理", "经期记录", "产后管理"],
                     introduction:
-                        "女性职业发展专家，深入理解女性职业挑战，专长于协助女性处理职业回归、家庭与事业平衡等问题。",
+                        "女性健康顾问，关注女性在不同阶段的体重变化、饮食节律和运动恢复参考。",
                     background:
-                        "北京协和医学院管理学硕士，女职场关系研究所研究员，产后职业辅导师，从业10年。",
+                        "女性健康管理与营养服务背景，从事经期、产后和家庭饮食记录支持10年。",
                     consultationCount: 3120,
                     successRate: 94,
                     responseTime: 14,
@@ -451,20 +451,20 @@ export default {
                     gender: "男",
                     age: 37,
                     experience: 8,
-                    title: "职业发展导师",
+                    title: "产品使用顾问",
                     avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=doctor10&backgroundColor=d1b3ff",
                     rating: 4.8,
                     reviewCount: 1760,
                     isOnline: true,
                     specialties: [
-                        "求职焦虑调适",
-                        "面试心理建设",
-                        "职场自信提升",
+                        "服用打卡",
+                        "体验反馈",
+                        "依从性建议",
                     ],
                     introduction:
-                        "求职心理咨询专家，专长于缓解求职焦虑，帮助学员建立面试自信，在关键时刻展现最佳状态。",
+                        "产品使用顾问，协助用户记录产品使用、身体反馈和打卡习惯，异常不适会提醒及时咨询医生。",
                     background:
-                        "上海交通大学管理学博士，焦虑障碍辅导师认证，暴露疗法专家，从业8年。",
+                        "用户服务与健康产品运营背景，从事产品使用指导和售后随访8年。",
                     consultationCount: 2450,
                     successRate: 92,
                     responseTime: 19,
@@ -476,16 +476,16 @@ export default {
                     gender: "女",
                     age: 34,
                     experience: 6,
-                    title: "职业发展导师",
+                    title: "健康建档顾问",
                     avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=doctor11&backgroundColor=b3d1ff",
                     rating: 4.8,
                     reviewCount: 1420,
                     isOnline: true,
-                    specialties: ["职业兴趣探索", "天赋发现", "优势识别"],
+                    specialties: ["健康档案", "基础指标", "隐私授权"],
                     introduction:
-                        "职业兴趣与天赋测评专家，通过创意工作坊和深度评估，帮助学员发现职业天赋和优势所在。",
+                        "健康建档顾问，帮助用户梳理身高、体重、腰围、目标体重和服务授权等基础信息。",
                     background:
-                        "中央美术学院管理学硕士，艺术辅导师认证，音乐辅导师，从业6年。",
+                        "健康档案和用户运营背景，从事基础数据登记、授权说明和随访建档6年。",
                     consultationCount: 1890,
                     successRate: 90,
                     responseTime: 21,
@@ -497,20 +497,20 @@ export default {
                     gender: "男",
                     age: 48,
                     experience: 16,
-                    title: "首席职业导师",
+                    title: "尊享服务顾问",
                     avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=doctor12&backgroundColor=ffd1b3",
                     rating: 4.9,
                     reviewCount: 3560,
                     isOnline: false,
                     specialties: [
-                        "职业生涯复盘",
-                        "职业决策分析",
-                        "深度职业咨询",
+                        "尊享随访",
+                        "趋势报告",
+                        "家庭管理",
                     ],
                     introduction:
-                        "资深职业咨询师，善于进行深度的职业生涯复盘，帮助学员分析职业决策的根源，做出明智选择。",
+                        "尊享服务顾问，面向需要长期陪跑的用户，提供趋势复盘、阶段目标和家庭饮食管理参考。",
                     background:
-                        "北京大学管理学博士，职业复盘学会会员，国际职业复盘师认证，从业16年。",
+                        "高阶健康管理服务背景，从事尊享随访、家庭健康管理和趋势报告解读16年。",
                     consultationCount: 5230,
                     successRate: 87,
                     responseTime: 35,
@@ -522,20 +522,20 @@ export default {
                     gender: "女",
                     age: 31,
                     experience: 5,
-                    title: "职业发展导师",
+                    title: "打卡陪跑顾问",
                     avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=doctor13&backgroundColor=b3ffd1",
                     rating: 4.7,
                     reviewCount: 980,
                     isOnline: true,
                     specialties: [
-                        "职业韧性建设",
-                        "职场压力管理",
-                        "职业心理调适",
+                        "每日打卡",
+                        "习惯养成",
+                        "阶段鼓励",
                     ],
                     introduction:
-                        "职业心理建设专家，帮助职场人士培养职业韧性，应对工作压力与挑战，保持职业健康心态。",
+                        "打卡陪跑顾问，帮助用户保持体重、饮食、运动和产品使用记录，适合刚开始管理的用户。",
                     background:
-                        "南京大学管理学硕士，正念辅导师认证，冥想指导师，从业5年。",
+                        "健康社群运营背景，从事用户打卡陪跑、习惯养成和阶段复盘5年。",
                     consultationCount: 1560,
                     successRate: 93,
                     responseTime: 17,
@@ -547,16 +547,16 @@ export default {
                     gender: "男",
                     age: 44,
                     experience: 13,
-                    title: "副首席职业导师",
+                    title: "社区服务点负责人",
                     avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=doctor14&backgroundColor=d1ffb3",
                     rating: 4.8,
                     reviewCount: 2670,
                     isOnline: true,
-                    specialties: ["团队协作能力", "跨部门沟通", "领导力培养"],
+                    specialties: ["社区活动", "线下筛查", "服务转介"],
                     introduction:
-                        "团队建设与领导力专家，通过创意团建活动帮助职场人士提升团队协作能力和领导力水平。",
+                        "社区服务点负责人，负责线下健康筛查、用户登记、活动预约和必要时的服务转介。",
                     background:
-                        "华中师范大学管理学博士，团体辅导师认证，社交技能训练师，从业13年。",
+                        "社区健康服务背景，从事线下服务点运营、健康宣教和用户转介13年。",
                     consultationCount: 3780,
                     successRate: 91,
                     responseTime: 24,
@@ -568,20 +568,20 @@ export default {
                     gender: "女",
                     age: 40,
                     experience: 11,
-                    title: "副首席职业导师",
+                    title: "睡眠管理顾问",
                     avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=doctor15&backgroundColor=ffb3ff",
                     rating: 4.9,
                     reviewCount: 2980,
                     isOnline: false,
                     specialties: [
-                        "工作效能优化",
-                        "职业时间管理",
-                        "职场精力管理",
+                        "睡眠记录",
+                        "夜间饮食",
+                        "节律调整",
                     ],
                     introduction:
-                        "职业效能与时间管理专家，帮助职场人士提升工作效能，科学管理精力，实现职业生产力最大化。",
+                        "睡眠管理顾问，帮助用户记录睡眠质量、夜间饮食和作息变化，提供节律改善参考。",
                     background:
-                        "北京师范大学管理学博士，睡眠医学专家，生物反馈辅导师，从业11年。",
+                        "睡眠健康教育背景，从事睡眠记录、节律调整和体重管理支持11年。",
                     consultationCount: 4120,
                     successRate: 96,
                     responseTime: 13,
@@ -593,16 +593,16 @@ export default {
                     gender: "男",
                     age: 46,
                     experience: 14,
-                    title: "首席职业导师",
+                    title: "机构合作顾问",
                     avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=doctor16&backgroundColor=b3ffff",
                     rating: 4.8,
                     reviewCount: 3340,
                     isOnline: true,
-                    specialties: ["职场沟通艺术", "跨部门协调", "冲突管理"],
+                    specialties: ["机构随访", "服务协同", "健康宣教"],
                     introduction:
-                        "职场沟通与关系协调专家，专长于处理复杂职场关系，帮助职场人士掌握高效沟通技巧。",
+                        "机构合作顾问，协助社区、机构和平台服务人员进行用户随访协同与健康宣教安排。",
                     background:
-                        "复旦大学管理学博士，性职业辅导师认证，性医学专家，从业14年。",
+                        "机构健康服务和运营管理背景，从事合作服务流程和用户随访协同14年。",
                     consultationCount: 4560,
                     successRate: 89,
                     responseTime: 28,
@@ -614,20 +614,20 @@ export default {
                     gender: "女",
                     age: 32,
                     experience: 6,
-                    title: "职业发展导师",
+                    title: "体态记录顾问",
                     avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=doctor17&backgroundColor=ffffb3",
                     rating: 4.7,
                     reviewCount: 1230,
                     isOnline: true,
                     specialties: [
-                        "职业形象管理",
-                        "职场礼仪指导",
-                        "个人品牌打造",
+                        "腰围记录",
+                        "体脂记录",
+                        "阶段对比",
                     ],
                     introduction:
-                        "职业形象与品牌打造顾问，帮助职场人士提升职业形象，构建个人品牌，增强职场竞争力。",
+                        "体态记录顾问，帮助用户记录腰围、体脂和阶段照片等变化，用于自我观察和顾问复盘。",
                     background:
-                        "浙江大学管理学硕士，饮食障碍辅导师认证，身体意象专家，从业6年。",
+                        "健康记录和用户陪伴服务背景，从事体态变化记录与阶段反馈支持6年。",
                     consultationCount: 1780,
                     successRate: 92,
                     responseTime: 20,
@@ -639,20 +639,20 @@ export default {
                     gender: "男",
                     age: 52,
                     experience: 20,
-                    title: "首席职业导师",
+                    title: "评估复盘顾问",
                     avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=doctor18&backgroundColor=d1d1ff",
                     rating: 4.9,
                     reviewCount: 4560,
                     isOnline: false,
                     specialties: [
-                        "职业测评与诊断",
-                        "职业能力评估",
-                        "发展方向指导",
+                        "健康自测",
+                        "服务层级",
+                        "风险提示",
                     ],
                     introduction:
-                        "资深职业评估专家，运用国际权威的职业测评工具，为学员提供全面准确的职业诊断与发展指导。",
+                        "评估复盘顾问，帮助用户理解健康自测结果、服务层级建议和需要关注的生活方式因素。",
                     background:
-                        "中科院职业研究院博士，职业测评专家，国际职业评估师认证，从业20年。",
+                        "健康评估与用户随访背景，从事健康自测、风险提示和服务匹配20年。",
                     consultationCount: 6780,
                     successRate: 95,
                     responseTime: 40,
@@ -664,20 +664,20 @@ export default {
                     gender: "女",
                     age: 38,
                     experience: 9,
-                    title: "职业发展导师",
+                    title: "阶段复盘顾问",
                     avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=doctor19&backgroundColor=ffd1d1",
                     rating: 4.8,
                     reviewCount: 2100,
                     isOnline: true,
                     specialties: [
-                        "职业挫折恢复",
-                        "职业目标重置",
-                        "积极心态建设",
+                        "平台期复盘",
+                        "目标调整",
+                        "心理支持",
                     ],
                     introduction:
-                        "职业成长与心态建设专家，帮助遭遇职业挫折的学员积极调整，重新发现职业意义与价值。",
+                        "阶段复盘顾问，擅长陪伴用户面对平台期和短期波动，帮助重新设定可执行的阶段目标。",
                     background:
-                        "清华大学管理学博士，积极成长研究员，创伤后成长专家，从业9年。",
+                        "健康教育与用户陪伴背景，从事平台期复盘、目标调整和情绪支持9年。",
                     consultationCount: 2890,
                     successRate: 94,
                     responseTime: 16,
@@ -689,16 +689,16 @@ export default {
                     gender: "男",
                     age: 43,
                     experience: 12,
-                    title: "副首席职业导师",
+                    title: "数据趋势顾问",
                     avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=doctor20&backgroundColor=d1ffd1",
                     rating: 4.7,
                     reviewCount: 2450,
                     isOnline: true,
-                    specialties: ["职场效率提升", "优先级管理", "专注力提升"],
+                    specialties: ["趋势报告", "数据复盘", "目标追踪"],
                     introduction:
-                        "职场效率与专注力提升专家，帮助职场人士摆脱信息过载和拖延习惯，建立高效的工作节奏。",
+                        "数据趋势顾问，帮助用户复盘体重、腰围、睡眠和打卡趋势，识别可继续优化的生活习惯。",
                     background:
-                        "北京理工大学管理学博士，数字健康专家，网络习惯重塑师，从业12年。",
+                        "数字健康和数据运营背景，从事趋势报告、目标追踪和用户行为分析12年。",
                     consultationCount: 3450,
                     successRate: 90,
                     responseTime: 23,
@@ -735,7 +735,7 @@ export default {
                 await new Promise((resolve) => setTimeout(resolve, 1000));
                 this.loading = false;
             } catch (error) {
-                console.error("加载导师列表失败:", error);
+                console.error("加载顾问列表失败:", error);
                 this.loading = false;
             }
         },
@@ -755,7 +755,7 @@ export default {
         },
 
         makeAppointment(doctor) {
-            // 跳转到预约页面，传递导师信息
+            // 跳转到预约页面，传递顾问信息
             uni.navigateTo({
                 url: `/pages/psychologist/appointment?doctorId=${doctor.id}&doctorName=${encodeURIComponent(doctor.name)}&doctorTitle=${encodeURIComponent(doctor.title)}&doctorAvatar=${encodeURIComponent(doctor.avatar)}&doctorSpecialties=${encodeURIComponent(doctor.specialties.join(","))}`,
             });

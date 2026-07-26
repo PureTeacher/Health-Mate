@@ -111,7 +111,7 @@
                     </view>
 
                     <view class="level-section">
-                        <text class="level-label">职业发展准备度</text>
+                        <text class="level-label">睡眠与精力状态</text>
                         <text
                             class="level-value"
                             :class="getLevelClass(resultData.readinessLevel)"
@@ -152,35 +152,35 @@
 export default {
     data() {
         return {
-            themeColor: "#9C27B0", // 主色调 - 紫色代表时间管理评估
+            themeColor: "#9C27B0", // 主色调 - 紫色代表睡眠精力评估
             answers: [], // 初始化空数组
             questions: [
                 {
                     id: 1,
                     type: "skills",
-                    text: "最近一个月，你是否保持了稳定的求职或学习作息",
+                    text: "最近一个月，你是否保持了相对稳定的入睡和起床时间",
                     options: [
-                        { text: "0-15分钟", desc: "0分", score: 0 },
-                        { text: "16-30分钟", desc: "3分", score: 3 },
-                        { text: "31-60分钟", desc: "6分", score: 6 },
-                        { text: "超过60分钟", desc: "10分", score: 10 },
+                        { text: "很不稳定", desc: "0分", score: 0 },
+                        { text: "偶尔稳定", desc: "3分", score: 3 },
+                        { text: "多数稳定", desc: "6分", score: 6 },
+                        { text: "基本稳定", desc: "10分", score: 10 },
                     ],
                 },
                 {
                     id: 2,
                     type: "skills",
-                    text: "最近一个月，你每天可用于职业准备的有效时长是否充足",
+                    text: "最近一个月，你的睡眠时长是否基本满足白天精力需要",
                     options: [
-                        { text: "超过7小时", desc: "0分", score: 0 },
-                        { text: "6-7小时", desc: "3分", score: 3 },
-                        { text: "5-6小时", desc: "6分", score: 6 },
-                        { text: "少于5小时", desc: "10分", score: 10 },
+                        { text: "明显不足", desc: "0分", score: 0 },
+                        { text: "偶尔足够", desc: "3分", score: 3 },
+                        { text: "多数足够", desc: "6分", score: 6 },
+                        { text: "基本足够", desc: "10分", score: 10 },
                     ],
                 },
                 {
                     id: 3,
                     type: "skills",
-                    text: "最近一个月，你是否常被紧张打断复盘或学习节奏",
+                    text: "最近一个月，你是否能较少被夜间醒来影响恢复",
                     options: [
                         { text: "从不", desc: "0分", score: 0 },
                         { text: "很少", desc: "3分", score: 3 },
@@ -191,7 +191,7 @@ export default {
                 {
                     id: 4,
                     type: "skills",
-                    text: "你对近期面试准备状态的满意度如何",
+                    text: "你对近期睡眠质量和晨起状态的满意度如何",
                     options: [
                         { text: "非常满意", desc: "0分", score: 0 },
                         { text: "比较满意", desc: "3分", score: 3 },
@@ -202,7 +202,7 @@ export default {
                 {
                     id: 5,
                     type: "skills",
-                    text: "最近一个月，你是否因临近面试而反复精力不济",
+                    text: "最近一个月，你是否较少因熬夜影响饮食和运动计划",
                     options: [
                         { text: "从不", desc: "0分", score: 0 },
                         { text: "很少", desc: "3分", score: 3 },
@@ -213,7 +213,7 @@ export default {
                 {
                     id: 6,
                     type: "skills",
-                    text: "最近一个月，你是否常感到准备不充分",
+                    text: "最近一个月，你是否能在疲惫时适当调整管理计划",
                     options: [
                         { text: "从不", desc: "0分", score: 0 },
                         { text: "很少", desc: "3分", score: 3 },
@@ -224,7 +224,7 @@ export default {
                 {
                     id: 7,
                     type: "skills",
-                    text: "最近一个月，你在白天面试或学习时是否容易疲惫",
+                    text: "最近一个月，你白天进行工作、运动或打卡时是否有足够精力",
                     options: [
                         { text: "从不", desc: "0分", score: 0 },
                         { text: "很少", desc: "3分", score: 3 },
@@ -275,17 +275,17 @@ export default {
         typeTag() {
             const types = {
                 sleep: {
-                    text: "职业发展准备度",
+                    text: "睡眠与精力状态",
                     color: "#9C27B0",
                     icon: "/static/icons/sleep.png",
                 },
                 mood: {
-                    text: "工作热情评估",
+                    text: "睡眠精力评估",
                     color: "#FFA500",
                     icon: "/static/icons/mood.png",
                 },
                 anxiety: {
-                    text: "压力管理",
+                    text: "恢复状态参考",
                     color: "#FFA500",
                     icon: "/static/icons/anxiety.png",
                 },
@@ -293,7 +293,7 @@ export default {
             };
             return (
                 types[this.currentQuestion.type] || {
-                    text: "职场测评",
+                    text: "轻益点健康自测",
                     color: this.themeColor,
                     icon: "/static/icons/psychology.png",
                 }
@@ -380,35 +380,35 @@ export default {
                 0,
             );
 
-            // 根据10分制标准判断职业发展准备度（7题，总分0-70）
+            // 根据10分制标准判断睡眠与精力状态（7题，总分0-70）
             let readinessLevel = "";
             let levelDescription = "";
             let suggestion = "";
 
             if (totalScore >= 0 && totalScore <= 14) {
-                readinessLevel = "准备度不足";
+                readinessLevel = "睡眠精力待改善";
                 levelDescription =
-                    "您在作息规律、时间管理和面试精力等方面准备明显不足，状态不佳。";
+                    "您的睡眠规律和白天精力支持可能不足，当前结果仅供健康管理参考。";
                 suggestion =
-                    "1. 立即调整作息，建立规则的生活和工作节奏\n2. 进行身体和心理调整，恢复最佳状态\n3. 制定系统的面试准备计划，逐步提升\n4. 必要时寻求专业的职业发展或心理咨询";
+                    "1. 建议先记录睡眠时长、夜醒、晨起状态和白天疲劳\n2. 可从固定起床时间、减少睡前刺激和规律晚餐开始调整\n3. 如长期失眠、严重疲劳或明显不适，建议咨询医生\n4. 测评结果不能替代医生判断";
             } else if (totalScore >= 15 && totalScore <= 28) {
-                readinessLevel = "准备度基本";
+                readinessLevel = "睡眠精力基本";
                 levelDescription =
-                    "您具有基本的职业发展准备，但作息、精力和面试状态还需进一步优化。";
+                    "您的睡眠与精力有一定基础，但仍可能影响饮食运动执行和产品体验观察。";
                 suggestion =
-                    "1. 制定详细的作息和健身计划，提升体能和精力\n2. 进行针对性的面试训练和模拟面试\n3. 调整期望，制定更符合实际的发展目标\n4. 建立支持系统，获得家人和专业人士的帮助";
+                    "1. 建议把睡眠和情绪纳入每日打卡\n2. 可结合轻益点科普内容优化晚间饮食和运动时间\n3. 若疲劳反复影响生活，建议咨询医生排查相关因素\n4. AI建议仅作参考，不替代专业诊疗";
             } else if (totalScore >= 29 && totalScore <= 42) {
-                readinessLevel = "准备度良好";
+                readinessLevel = "睡眠精力较好";
                 levelDescription =
-                    "您在职业发展各环节的准备都相对充分，状态良好，具有较好的就绪状态。";
+                    "您的睡眠和白天精力较好，可能有助于维持稳定打卡和运动安排。";
                 suggestion =
-                    "1. 保持良好的作息和健身习惯，维持最佳状态\n2. 进行最后的面试冲刺准备，细化答题要点\n3. 调整心态，以自信和放松的态度去应对\n4. 定期进行自我评估和调整，确保持续优化";
+                    "1. 建议继续观察睡眠、体重和食欲变化之间的关系\n2. 可按周复盘运动后恢复情况，避免过量运动\n3. 产品使用期间如出现不适，建议记录并咨询顾问或医生\n4. 管理建议以温和、可持续为原则";
             } else if (totalScore >= 43 && totalScore <= 70) {
-                readinessLevel = "准备度优秀";
+                readinessLevel = "睡眠精力稳定";
                 levelDescription =
-                    "您对职业发展的各方面准备都非常充分，状态最佳，完全准备好迎接新的挑战。";
+                    "您的睡眠节律和精力支持较稳定，可作为长期体重管理的积极基础。";
                 suggestion =
-                    "1. 主动出击，积极争取目标机会和职位\n2. 在面试中充分展示自己的优势和价值\n3. 灵活应对突发情况，保持高效表现\n4. 成功后继续学习和成长，为长期发展做准备";
+                    "1. 建议保持规律作息，继续记录睡眠、运动和情绪趋势\n2. 可参考趋势报告观察阶段变化\n3. 若出现持续失眠、胸闷、眩晕等严重不适，建议及时就医\n4. 健康建议仅供参考，不承诺特定减重结果";
             }
 
             // 设置结果数据并显示弹窗
@@ -453,16 +453,16 @@ export default {
             this.scrollToTop();
         },
         getLevelClass(level) {
-            if (level.includes("职业发展准备度良好")) return "level-normal";
-            if (level.includes("职业发展准备度一般")) return "level-mild";
-            if (level.includes("职业发展准备度较差")) return "level-moderate";
-            if (level.includes("职业发展准备度很差")) return "level-severe";
+            if (level.includes("稳定")) return "level-normal";
+            if (level.includes("较好")) return "level-mild";
+            if (level.includes("基本")) return "level-moderate";
+            if (level.includes("待改善")) return "level-severe";
             return "level-normal";
         },
         // 保存测试结果到数据库
         async saveTestResultToDatabase() {
             const requestData = {
-                questionnaireName: "PSQI求职期作息与精力评估表",
+                questionnaireName: "轻益点睡眠与精力自测",
                 questionnaireType: "sleep",
                 score: this.resultData.totalScore,
                 depressionLevel: this.resultData.readinessLevel,

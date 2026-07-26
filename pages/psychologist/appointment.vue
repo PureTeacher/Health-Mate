@@ -4,11 +4,11 @@
     <!-- <view class="header">
       <view class="header-left">
         <text class="back-arrow" @click="goBack">⬅️</text>
-        <text class="header-title">预约导师</text>
+      <text class="header-title">预约顾问</text>
       </view>
     </view> -->
 
-    <!-- 导师信息卡片 -->
+    <!-- 顾问信息卡片 -->
     <view class="doctor-card">
       <view class="doctor-info">
         <image :src="doctorInfo.avatar" class="doctor-avatar" mode="aspectFill"/>
@@ -23,8 +23,8 @@
     <!-- 预约表单 -->
     <view class="form-container">
       <view class="form-title">
-        <text class="title-text">填写预约信息</text>
-        <text class="title-desc">请填写您的个人信息，我们会尽快与您联系</text>
+      <text class="title-text">填写预约信息</text>
+      <text class="title-desc">请填写基础信息，便于顾问了解你的健康管理需求</text>
       </view>
 
       <view class="form-content">
@@ -86,13 +86,13 @@
           />
         </view>
 
-        <!-- 咨询目标 -->
+        <!-- 健康管理目标 -->
         <view class="form-item">
-          <text class="form-label">咨询目标 <text class="required">*</text></text>
+          <text class="form-label">健康管理目标 <text class="required">*</text></text>
           <textarea 
             class="form-textarea" 
             v-model="formData.content"
-            placeholder="请详细描述您希望咨询的职业问题或目标，这将帮助导师更好地了解您的需求"
+            placeholder="请描述你的体重目标、产品使用问题、饮食运动困扰或随访需求"
             maxlength="500"
             :show-count="true"
           />
@@ -165,7 +165,7 @@
         >
           提交预约申请
         </button>
-        <text class="submit-tip">提交后我们会在24小时内联系您</text>
+        <text class="submit-tip">提交后我们会在24小时内联系您确认预约</text>
       </view>
     </view>
 
@@ -175,7 +175,7 @@
         <view class="success-icon">✅</view>
         <text class="success-title">预约申请已提交</text>
         <text class="success-message">
-          我们已经收到您的预约信息，稍后会有工作人员联系您确认具体的咨询时间。感谢您的信任！
+          我们已经收到您的预约信息，稍后会有工作人员联系您确认具体的随访时间。感谢您的信任！
         </text>
         <button class="success-btn" @click="closeSuccess">确定</button>
       </view>
@@ -203,9 +203,9 @@ export default {
       doctorInfo: {
         id: 1,
         name: '李心怡',
-        title: '首席职业导师',
+        title: '首席健康顾问',
         avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=doctor1&backgroundColor=b6e3f4',
-        specialties: ['焦虑症', '抑郁症', '情感咨询']
+        specialties: ['体重管理', '饮食记录', '产品使用']
       }
     }
   },
@@ -345,7 +345,7 @@ export default {
   },
   
   onLoad(options) {
-    // 从上一页传递导师信息
+    // 从上一页传递顾问信息
     if (options.doctorId) {
       this.doctorInfo = {
         id: options.doctorId,
@@ -655,4 +655,3 @@ export default {
   }
 }
 </style>
-

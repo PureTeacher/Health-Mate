@@ -5,9 +5,9 @@
             <view class="section-title">隐私设置</view>
             <view class="settings-item">
                 <view class="item-left">
-                    <text class="item-label">显示我的职业测评数据</text>
+                    <text class="item-label">显示我的健康评估数据</text>
                     <text class="item-desc"
-                        >允许其他用户查看你的职业测评结果概览</text
+                        >允许授权服务人员查看你的健康评估概览</text
                     >
                 </view>
                 <switch
@@ -19,7 +19,7 @@
             <view class="settings-item">
                 <view class="item-left">
                     <text class="item-label">允许位置分享</text>
-                    <text class="item-desc">用于推荐周边导师咨询服务</text>
+                    <text class="item-desc">用于推荐附近健康服务点</text>
                 </view>
                 <switch
                     :checked="settings.allowLocation"
@@ -35,7 +35,7 @@
             <view class="settings-item">
                 <view class="item-left">
                     <text class="item-label">接收测试提醒</text>
-                    <text class="item-desc">定期提醒你进行职业测评</text>
+                    <text class="item-desc">定期提醒你进行健康自测和打卡</text>
                 </view>
                 <switch
                     :checked="settings.testReminder"
@@ -57,7 +57,7 @@
             <view class="settings-item">
                 <view class="item-left">
                     <text class="item-label">接收消息提醒</text>
-                    <text class="item-desc">来自导师或平台的消息通知</text>
+                    <text class="item-desc">来自健康顾问或平台的消息通知</text>
                 </view>
                 <switch
                     :checked="settings.messageReminder"
@@ -257,7 +257,7 @@ export default {
             uni.showModal({
                 title: "隐私政策",
                 content:
-                    "我们尊重并保护您的个人隐私。本应用采用行业标准的安全措施来保护您的数据安全。详细内容请访问我们的官方网站。",
+                    "我们尊重并保护您的个人隐私。健康档案、评估结果、打卡记录等数据仅在用户授权范围内用于健康管理服务。",
                 showCancel: false,
                 confirmText: "知道了",
             });

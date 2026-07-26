@@ -4,10 +4,10 @@
         <view class="header">
             <view class="header-content">
                 <view class="header-top">
-                    <text class="sunshine-title">择途</text>
+                    <text class="sunshine-title">轻益点</text>
                     <view class="deco-dot"></view>
                 </view>
-                <text class="header-subtitle">先评估，再匹配，后成长</text>
+                <text class="header-subtitle">科学减重，健康共管</text>
                 <view class="header-decoration"></view>
             </view>
         </view>
@@ -20,7 +20,7 @@
             <!-- 卡片容器：flex双列布局 -->
             <view class="content-wrapper">
                 <view class="greeting-section">
-                    <text class="greeting-text">选择你需要的服务</text>
+                    <text class="greeting-text">选择你的健康管理服务</text>
                     <view class="greeting-line"></view>
                 </view>
                 <view class="card-container">
@@ -74,45 +74,45 @@ export default {
             cardList: [
                 {
                     id: 1,
-                    title: "职业测评",
-                    desc: "职业性格与兴趣评估｜3分钟快速定位方向",
+                    title: "健康自测",
+                    desc: "BMI与生活习惯评估｜匹配服务层级",
                     iconPath: "/static/custom-icon-1.png",
                     path: "/pages/phq7-test/index",
                     bgColor: "#E8F5E9",
-                    tag: "职业定位",
+                    tag: "健康建档",
                     gradient:
                         "linear-gradient(135deg, #3b82f6 0%, #1e3a8a 100%)",
                 },
                 {
                     id: 2,
-                    title: "职场干货",
-                    desc: "行业动态与面经分享｜持续提升职场认知",
+                    title: "科普内容",
+                    desc: "AKK菌与科学减重｜了解肠道微生态",
                     iconPath: "/static/custom-icon-2.png",
                     path: "/pages/health/index",
                     bgColor: "#E3F2FD",
-                    tag: "职场资讯",
+                    tag: "健康科普",
                     gradient:
                         "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)",
                 },
                 {
                     id: 3,
-                    title: "职业导师",
-                    desc: "资深行业导师｜一对一职业咨询",
+                    title: "顾问随访",
+                    desc: "健康顾问与服务点｜预约跟踪支持",
                     iconPath: "/static/custom-icon-3.png",
                     path: "/pages/psychologist/index",
                     bgColor: "#FFF8E1",
-                    tag: "生涯规划",
+                    tag: "随访服务",
                     gradient:
                         "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)",
                 },
                 {
                     id: 4,
-                    title: "AI职场顾问",
-                    desc: "智能求职助手｜24小时在线答疑",
+                    title: "AI健康顾问",
+                    desc: "产品使用与打卡建议｜健康问题先参考",
                     iconPath: "/static/custom-icon-4.png",
                     path: "/pages/message/message",
                     bgColor: "#FCE4EC",
-                    tag: "AI规划师",
+                    tag: "智能顾问",
                     gradient:
                         "linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)",
                 },

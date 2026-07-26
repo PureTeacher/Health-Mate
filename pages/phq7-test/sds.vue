@@ -111,7 +111,7 @@
                     </view>
 
                     <view class="level-section">
-                        <text class="level-label">转型风险评级</text>
+                        <text class="level-label">长期管理中断风险</text>
                         <text
                             class="level-value"
                             :class="
@@ -154,13 +154,13 @@
 export default {
     data() {
         return {
-            themeColor: "#673AB7", // 主色调 - 深紫色代表作息失调评估
+            themeColor: "#673AB7", // 主色调 - 深紫色代表管理中断风险评估
             answers: [], // 初始化空数组
             questions: [
                 {
                     id: 1,
                     type: "transformation",
-                    text: "最近两周，你是否难以开始当天的求职或学习计划",
+                    text: "最近两周，你是否难以开始当天的健康打卡或记录",
                     options: [
                         { text: "从不", desc: "0分", score: 0 },
                         { text: "很少", desc: "3分", score: 3 },
@@ -182,7 +182,7 @@ export default {
                 {
                     id: 3,
                     type: "transformation",
-                    text: "最近两周，你是否经常拖延关键任务（如投递或复盘）",
+                    text: "最近两周，你是否经常拖延关键任务（如称重或复盘）",
                     options: [
                         { text: "从不", desc: "0分", score: 0 },
                         { text: "很少", desc: "3分", score: 3 },
@@ -259,7 +259,7 @@ export default {
                 {
                     id: 10,
                     type: "transformation",
-                    text: "整体上，你是否能稳定推进求职与职业成长行动",
+                    text: "整体上，你是否难以稳定推进体重管理和随访行动",
                     options: [
                         { text: "从不", desc: "0分", score: 0 },
                         { text: "很少", desc: "3分", score: 3 },
@@ -315,12 +315,12 @@ export default {
                     icon: "/static/icons/sleep.png",
                 },
                 mood: {
-                    text: "工作热情评估",
+                    text: "行动节奏评估",
                     color: "#FFA500",
                     icon: "/static/icons/mood.png",
                 },
                 anxiety: {
-                    text: "压力管理",
+                    text: "中断风险参考",
                     color: "#FFA500",
                     icon: "/static/icons/anxiety.png",
                 },
@@ -328,7 +328,7 @@ export default {
             };
             return (
                 types[this.currentQuestion.type] || {
-                    text: "职场测评",
+                    text: "轻益点健康自测",
                     color: this.themeColor,
                     icon: "/static/icons/psychology.png",
                 }
@@ -415,35 +415,35 @@ export default {
                 0,
             );
 
-            // 根据10分制标准判断转型风险评级（10题，总分0-100）
+            // 根据10分制标准判断长期管理中断风险（10题，总分0-100）
             let transformationRisk = "";
             let levelDescription = "";
             let suggestion = "";
 
             if (totalScore >= 0 && totalScore <= 20) {
-                transformationRisk = "转型风险极低";
+                transformationRisk = "中断风险较低";
                 levelDescription =
-                    "您在经济基础、能力储备、心理准备和人脉资源方面都充分具备，转型条件优越。";
+                    "您当前的行动节奏较稳定，长期体重管理中断风险可能较低。";
                 suggestion =
-                    "1. 立即启动转型计划，充分利用优势\n2. 制定详细的实施路线图和时间表\n3. 做好过渡期的工作管理和交接\n4. 积极建立新领域的人脉和资源网络";
+                    "1. 建议继续保持每日打卡和每周复盘\n2. 可观察体重、腰围、睡眠、情绪和产品体验的阶段变化\n3. 管理建议应保持温和、可持续\n4. 如出现基础病相关问题、用药或严重不适，建议咨询医生";
             } else if (totalScore >= 21 && totalScore <= 40) {
-                transformationRisk = "转型风险较低";
+                transformationRisk = "中断风险可控";
                 levelDescription =
-                    "您具备良好的转型基础，大多数条件较为充分，转型相对可行。";
+                    "您有一定管理基础，但在节奏恢复和阻力处理方面仍建议提前准备。";
                 suggestion =
-                    "1. 制定详细的转型方案，明确关键步骤和节点\n2. 补齐能力短板，提前做好技能和知识储备\n3. 建立稳定的经济支撑，确保过渡期的生活质量\n4. 寻找转型导师或专业机构的指导";
+                    "1. 建议预设中断后的恢复动作，如补记打卡或预约复盘\n2. 可让健康顾问帮助识别常见中断场景\n3. 产品使用和身体反馈建议持续记录\n4. AI和测评结果仅供参考，不能替代医生判断";
             } else if (totalScore >= 41 && totalScore <= 60) {
-                transformationRisk = "转型风险中等";
+                transformationRisk = "中断风险中等";
                 levelDescription =
-                    "您在某些关键方面的转型准备还不够充分，转型存在一定风险需要谨慎。";
+                    "您在执行持续性、注意力或受挫恢复方面可能存在一定中断风险。";
                 suggestion =
-                    "1. 进行深入的转型风险评估，识别主要障碍\n2. 制定风险应对措施，逐一补齐短板\n3. 考虑先进行试验性的转型或兼职尝试\n4. 建立应急预案，做好失败的心理和物质准备";
+                    "1. 建议把目标缩小到可完成的小动作，降低启动难度\n2. 可预约健康顾问做阶段复盘，调整打卡频率和提醒方式\n3. 如长期情绪低落、失眠或身体不适，建议咨询医生或心理专业人员\n4. 不建议用极端节食或过量运动弥补中断";
             } else if (totalScore >= 61 && totalScore <= 100) {
-                transformationRisk = "转型风险高";
+                transformationRisk = "中断风险较高";
                 levelDescription =
-                    "您在经济保障、能力储备或心理准备等多个方面存在不足，转型风险较高。";
+                    "您近期行动中断风险较高，建议先降低目标难度并增加支持。";
                 suggestion =
-                    "1. 暂停立即转型，先进行充分的准备和积累\n2. 在当前岗位上继续发展，为转型蓄积资本和经验\n3. 系统学习目标领域的知识和技能\n4. 建立稳定的收入来源和经济储备\\n5. 获得心理咨询和职业指导，建立转型信心";
+                    "1. 建议先选择1-2项最容易坚持的打卡内容\n2. 可开启轻益点随访提醒，必要时预约健康顾问\n3. 若存在明显不适、异常指标或用药情况，建议优先咨询医生\n4. 测评结果只作风险参考，不代表医学判断";
             }
 
             // 设置结果数据并显示弹窗
@@ -488,19 +488,19 @@ export default {
             this.scrollToTop();
         },
         getLevelClass(level) {
-            if (level.includes("无作息失调")) return "level-normal";
-            if (level.includes("轻度作息失调")) return "level-mild";
-            if (level.includes("中度作息失调")) return "level-moderate";
-            if (level.includes("重度作息失调")) return "level-severe";
+            if (level.includes("较低")) return "level-normal";
+            if (level.includes("可控")) return "level-mild";
+            if (level.includes("中等")) return "level-moderate";
+            if (level.includes("较高")) return "level-severe";
             return "level-normal";
         },
         // 保存测试结果到数据库
         async saveTestResultToDatabase() {
             const requestData = {
-                questionnaireName: "SDS作息失调量表",
+                questionnaireName: "轻益点长期管理中断风险评估",
                 questionnaireType: "sleep",
                 score: this.resultData.totalScore,
-                depressionLevel: this.resultData.depressionLevel,
+                depressionLevel: this.resultData.transformationRisk,
                 levelDescription: this.resultData.levelDescription,
                 resultData: {
                     answers: this.answers,

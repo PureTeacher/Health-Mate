@@ -46,7 +46,7 @@
                 <view class="help-card">
                     <text class="card-title">第三步：开始使用功能</text>
                     <text class="card-text">
-                        浏览职业测评、预约导师、查看成长记录等丰富功能。
+                        浏览健康自测、AI 健康顾问、顾问预约、科普内容等核心功能。
                     </text>
                 </view>
             </view>
@@ -56,37 +56,37 @@
                 <text class="section-title">✨ 功能介绍</text>
 
                 <view class="help-card">
-                    <text class="card-title">职业规划测评</text>
+                    <text class="card-title">健康自测</text>
                     <text class="card-text">
-                        提供多种专业的职业评估工具，包括职业兴趣、职业决策、职场压力、沟通协作等多维测评，帮助您明确发展方向。
+                        收集 BMI、体重目标、饮食、运动、睡眠、情绪等信息，用于生成健康管理参考建议。
                     </text>
                 </view>
 
                 <view class="help-card">
-                    <text class="card-title">导师咨询</text>
+                    <text class="card-title">顾问随访</text>
                     <text class="card-text">
-                        与资深行业导师进行预约咨询，获得简历优化、面试辅导和职业发展建议。
+                        可预约健康顾问、营养师或线下服务点，获得产品使用和生活方式管理参考。
                     </text>
                 </view>
 
                 <view class="help-card">
-                    <text class="card-title">成长记录追踪</text>
+                    <text class="card-title">健康记录追踪</text>
                     <text class="card-text">
-                        记录并追踪您的测评结果历史，了解职业能力与目标清晰度的变化趋势。
+                        记录并追踪健康自测、打卡和随访记录，帮助观察体重与生活习惯变化。
                     </text>
                 </view>
 
                 <view class="help-card">
                     <text class="card-title">消息通知</text>
                     <text class="card-text">
-                        接收导师预约确认、建议推荐等重要信息，不会错过任何关键通知。
+                        接收顾问预约确认、打卡提醒、健康建议等重要信息。
                     </text>
                 </view>
 
                 <view class="help-card">
                     <text class="card-title">隐私保护</text>
                     <text class="card-text">
-                        所有您的个人信息和测评数据都经过加密存储，我们严格遵守数据隐私政策，保护您的隐私。
+                        所有个人信息和健康数据都应在用户授权范围内使用，并采取必要的隐私保护措施。
                     </text>
                 </view>
             </view>
@@ -120,9 +120,9 @@
                 </view>
 
                 <view class="help-card">
-                    <text class="card-title">Q: 平台导师是否真实存在？</text>
+                    <text class="card-title">Q: 平台顾问是否真实存在？</text>
                     <text class="card-text">
-                        A: 我们的导师均经过认证，具备真实行业履历与辅导经验。
+                        A: 健康顾问、营养师和服务点信息会在平台内展示资质与服务范围，便于用户选择。
                     </text>
                 </view>
 
@@ -130,7 +130,7 @@
                     <text class="card-title">Q: 如何取消或修改预约？</text>
                     <text class="card-text">
                         A:
-                        进入我的预约，选择要修改的预约，点击"修改"或"取消"按钮。预约前24小时可以修改，建议提前沟通。
+                        进入我的预约，选择要修改的预约，点击"修改"或"取消"按钮。建议提前与顾问或服务点沟通。
                     </text>
                 </view>
 
@@ -138,7 +138,7 @@
                     <text class="card-title">Q: 测试结果是否可信？</text>
                     <text class="card-text">
                         A:
-                        我们提供的测评工具仅用于职业规划参考，最终决策建议结合导师一对一咨询。
+                        健康自测结果仅用于健康管理参考，不能替代医生诊断或治疗建议。
                     </text>
                 </view>
             </view>
@@ -167,7 +167,7 @@
                         <view class="method-info">
                             <text class="method-name">电子邮箱</text>
                             <text class="method-desc"
-                                >support@warmmate.com</text
+                                >support@bioslim.com</text
                             >
                         </view>
                     </view>

@@ -28,21 +28,21 @@
                         :class="{ selected: feedbackForm.type === 'bug' }"
                         @click="feedbackForm.type = 'bug'"
                     >
-                        🐛 Bug反馈
+                    功能异常
                     </view>
                     <view
                         class="type-option"
                         :class="{ selected: feedbackForm.type === 'feature' }"
                         @click="feedbackForm.type = 'feature'"
                     >
-                        ✨ 功能建议
+                    功能建议
                     </view>
                     <view
                         class="type-option"
                         :class="{ selected: feedbackForm.type === 'other' }"
                         @click="feedbackForm.type = 'other'"
                     >
-                        💬 其他反馈
+                    产品体验
                     </view>
                 </view>
             </view>
@@ -117,18 +117,18 @@ export default {
                     expanded: false,
                 },
                 {
-                    question: "如何导出职业测评报告？",
-                    answer: '完成职业测评后，可在结果页面点击"导出"保存或分享报告。',
+                    question: "如何查看健康自测记录？",
+                    answer: '完成健康自测后，可在"自测记录"中查看历史结果和建议。',
                     expanded: false,
                 },
                 {
-                    question: "职业导师如何预约？",
-                    answer: '在"职业咨询"模块选择导师后，选择合适时间进行预约。导师确认后会通过消息通知您。',
+                    question: "健康顾问如何预约？",
+                    answer: '在"顾问随访"模块选择健康顾问、营养师或服务点后填写预约信息。确认后会通过消息通知您。',
                     expanded: false,
                 },
                 {
                     question: "数据是否安全和隐私？",
-                    answer: "我们采用最新的加密技术保护您的个人信息和测试数据，严格遵守隐私政策，绝不将您的数据用于其他目的。",
+                    answer: "我们会在用户授权范围内使用健康档案、评估和打卡数据，并通过隐私设置帮助您管理数据权限。",
                     expanded: false,
                 },
                 {

@@ -3,6 +3,7 @@
     "configurations" : [
         {
             "customPlaygroundType" : "local",
+            "packageName" : "uni.app.UNIAE0749A",
             "playground" : "custom",
             "type" : "uni-app:app-android"
         }

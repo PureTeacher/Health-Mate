@@ -116,7 +116,7 @@
                     </view>
 
                     <view class="level-section">
-                        <text class="level-label">职业目标清晰度</text>
+                        <text class="level-label">体重目标准备度</text>
                         <text
                             class="level-value"
                             :class="getLevelClass(resultData.careerLevel)"
@@ -163,7 +163,7 @@ export default {
                 {
                     id: 1,
                     type: "planning",
-                    text: "你对自己的职业目标是否有明确的定位",
+                    text: "你是否明确自己的当前体重、目标体重和期望周期",
                     options: [
                         { text: "完全没有", desc: "0分", score: 0 },
                         { text: "有初步想法", desc: "3分", score: 3 },
@@ -174,7 +174,7 @@ export default {
                 {
                     id: 2,
                     type: "planning",
-                    text: "你的职业目标是否具有可执行性和可达成性",
+                    text: "你的体重管理目标是否温和、可持续且便于执行",
                     options: [
                         { text: "完全不可行", desc: "0分", score: 0 },
                         { text: "有一定难度", desc: "3分", score: 3 },
@@ -185,7 +185,7 @@ export default {
                 {
                     id: 3,
                     type: "planning",
-                    text: "你是否清楚实现目标需要的关键资源和条件",
+                    text: "你是否清楚实现目标需要配合的饮食、运动和睡眠条件",
                     options: [
                         { text: "完全不清楚", desc: "0分", score: 0 },
                         { text: "了解一部分", desc: "3分", score: 3 },
@@ -196,7 +196,7 @@ export default {
                 {
                     id: 4,
                     type: "planning",
-                    text: "你是否制定了具体的行动计划来实现目标",
+                    text: "你是否制定了具体的打卡、产品使用和随访计划",
                     options: [
                         { text: "没有计划", desc: "0分", score: 0 },
                         { text: "有模糊想法", desc: "3分", score: 3 },
@@ -207,7 +207,7 @@ export default {
                 {
                     id: 5,
                     type: "planning",
-                    text: "你是否定期评估和调整职业目标",
+                    text: "你是否会定期根据体重、腰围和身体反馈调整目标",
                     options: [
                         { text: "从不评估", desc: "0分", score: 0 },
                         { text: "偶尔评估", desc: "3分", score: 3 },
@@ -229,7 +229,7 @@ export default {
                 {
                     id: 7,
                     type: "planning",
-                    text: "你是否寻求过导师或专家的目标评估建议",
+                    text: "你是否咨询过健康顾问、营养师或医生的目标建议",
                     options: [
                         { text: "从未寻求", desc: "0分", score: 0 },
                         { text: "偶尔咨询", desc: "3分", score: 3 },
@@ -280,12 +280,12 @@ export default {
         typeTag() {
             const types = {
                 mood: {
-                    text: "工作热情评估",
+                    text: "健康目标评估",
                     color: "#FF6B81",
                     icon: "/static/icons/mood.png",
                 },
                 anxiety: {
-                    text: "压力管理",
+                    text: "目标风险参考",
                     color: "#FFA500",
                     icon: "/static/icons/anxiety.png",
                 },
@@ -293,7 +293,7 @@ export default {
             };
             return (
                 types[this.currentQuestion.type] || {
-                    text: "职场测评",
+                    text: "轻益点健康自测",
                     color: this.themeColor,
                     icon: "/static/icons/psychology.png",
                 }
@@ -380,7 +380,7 @@ export default {
                 0,
             );
 
-            // 根据10分制标准判断职业目标清晰度（7题，总分0-70）
+            // 根据10分制标准判断体重目标准备度（7题，总分0-70）
             let careerLevel = "";
             let levelDescription = "";
             let suggestion = "";
@@ -388,27 +388,27 @@ export default {
             if (totalScore >= 0 && totalScore <= 14) {
                 careerLevel = "目标定位待明确";
                 levelDescription =
-                    "您对职业目标的定位还比较模糊，缺乏具体的量化目标和执行计划。";
+                    "您的体重管理目标还比较模糊，当前结果仅供服务建议参考。";
                 suggestion =
-                    "1. 梳理自己的职业期待和理想状态\n2. 研究目标职位的具体要求和发展前景\n3. 评估当前能力与目标的差距\n4. 制定初步的目标清晰化计划";
+                    "1. 建议先记录当前体重、腰围、BMI和近期饮食运动情况\n2. 可把目标拆成更小的阶段，避免过快或过度调整\n3. 可先使用轻益点基础服务层完成建档和打卡\n4. 如有基础病、用药或严重不适，建议咨询医生";
             } else if (totalScore >= 15 && totalScore <= 28) {
                 careerLevel = "目标初步明确";
                 levelDescription =
-                    "您的职业目标有了初步想法，但仍需要更深入的思考和验证。";
+                    "您的目标已有初步方向，但执行节奏、服务层级和随访安排仍建议细化。";
                 suggestion =
-                    "1. 将目标具体化、量化，制定SMART目标\n2. 分析实现目标需要的关键步骤和时间线\n3. 识别可能的障碍和风险，制定应对策略\n4. 寻求导师或业内人士的建议和反馈";
+                    "1. 建议设置每周可观察的体重、饮食、运动和睡眠小目标\n2. 可参考轻益点基础服务层获得打卡提醒和健康档案整理\n3. 如执行中反复中断，可预约健康顾问做阶段复盘\n4. 测评和AI建议不能替代医生判断";
             } else if (totalScore >= 29 && totalScore <= 42) {
                 careerLevel = "目标较为清晰";
                 levelDescription =
-                    "您的职业目标已较为清晰，具有一定的可执行性。";
+                    "您的体重管理目标较为清晰，可能适合进入持续打卡和顾问随访。";
                 suggestion =
-                    "1. 将目标分解为具体的阶段性里程碑\n2. 制定详细的行动计划和资源配置\n3. 建立评估体系，定期检查进展\n4. 保持灵活性，根据实际情况适时调整";
+                    "1. 建议每周复盘体重、腰围、饮食运动和产品体验\n2. 可参考轻益点增值服务层细化个性化管理建议\n3. 关注睡眠、情绪和肠道反馈，避免只追求体重数字\n4. 出现异常指标或明显不适时，建议及时咨询医生";
             } else if (totalScore >= 43 && totalScore <= 70) {
                 careerLevel = "目标明确可执行";
                 levelDescription =
-                    "您的职业目标非常明确，规划系统完整，具有很强的可执行性。";
+                    "您的目标、执行计划和随访意识较完整，可作为长期健康管理的基础。";
                 suggestion =
-                    "1. 制定详细的执行计划，明确每个阶段的重点任务\n2. 建立项目管理体系，跟踪进展和效果\n3. 持续积累关键能力，建立竞争优势\n4. 定期反思总结，优化策略和方法";
+                    "1. 建议保持稳定打卡，并按月查看趋势报告\n2. 可参考轻益点尊享服务层进行更细致的顾问随访\n3. 产品使用建议遵循说明和专业建议，不能代替药物或治疗\n4. 若涉及慢病、用药或特殊身体状态，建议先咨询医生";
             }
 
             // 设置结果数据并显示弹窗
@@ -462,7 +462,7 @@ export default {
         // 保存测试结果到数据库
         async saveTestResultToDatabase() {
             const requestData = {
-                questionnaireName: "职业目标可行性评估",
+                questionnaireName: "轻益点体重目标与服务建议",
                 questionnaireType: "planning",
                 score: this.resultData.totalScore,
                 depressionLevel: this.resultData.careerLevel,
