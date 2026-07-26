@@ -58,6 +58,8 @@
 </template>
 
 <script>
+import { normalizeConversationRecord } from "@/common/ai/healthAdvisor.js";
+
 export default {
     data() {
         return {
@@ -101,15 +103,18 @@ export default {
                 }
 
                 const data = result.data;
+                const sourceRecords = data.records || [];
+                const records = sourceRecords.map((conversation) =>
+                    normalizeConversationRecord(conversation),
+                );
                 if (this.pageNum === 1) {
-                    this.conversationList = data.records || [];
+                    this.conversationList = records;
                 } else {
-                    this.conversationList = this.conversationList.concat(
-                        data.records || [],
-                    );
+                    this.conversationList =
+                        this.conversationList.concat(records);
                 }
 
-                if (data.records.length < this.pageSize) {
+                if (records.length < this.pageSize) {
                     this.isEnd = true;
                 }
             } catch (error) {

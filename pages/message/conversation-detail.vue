@@ -53,11 +53,18 @@
 </template>
 
 <script>
+import {
+    HEALTH_ADVISOR_TITLE,
+    buildHealthAdvisorMessagePayload,
+    normalizeAiConversationTitle,
+    normalizeMessageRecord,
+} from "@/common/ai/healthAdvisor.js";
+
 export default {
     data() {
         return {
             conversationId: "",
-            conversationTitle: "对话详情",
+            conversationTitle: HEALTH_ADVISOR_TITLE,
             messageList: [],
             pageNum: 1,
             pageSize: 20,
@@ -70,8 +77,8 @@ export default {
     },
     onLoad(options) {
         this.conversationId = options.id;
-        this.conversationTitle = decodeURIComponent(
-            options.title || "对话详情",
+        this.conversationTitle = normalizeAiConversationTitle(
+            decodeURIComponent(options.title || HEALTH_ADVISOR_TITLE),
         );
         this.userId = uni.getStorageSync("userId");
         this.loadMessages();
@@ -93,15 +100,17 @@ export default {
                 }
 
                 const data = result.data.messages;
+                const sourceRecords = data.records || [];
+                const records = sourceRecords.map((message) =>
+                    normalizeMessageRecord(message),
+                );
                 if (this.pageNum === 1) {
-                    this.messageList = data.records || [];
+                    this.messageList = records;
                 } else {
-                    this.messageList = (data.records || []).concat(
-                        this.messageList,
-                    );
+                    this.messageList = records.concat(this.messageList);
                 }
 
-                if (data.records.length < this.pageSize) {
+                if (records.length < this.pageSize) {
                     this.isEnd = true;
                 }
 
@@ -127,26 +136,33 @@ export default {
             this.isSending = true;
 
             try {
-                const result = await this.$api.message({
-                    msgContent: this.inputContent,
-                    msgType: "text",
-                    conversationId: this.conversationId,
-                });
+                const userContent = this.inputContent;
+                const result = await this.$api.message(
+                    buildHealthAdvisorMessagePayload(
+                        userContent,
+                        this.conversationId,
+                    ),
+                );
 
                 if (result.code === 200) {
                     const { userMessage, aiMessage } = result.data;
 
                     // 添加用户消息
                     this.messageList.push({
-                        ...userMessage,
+                        ...normalizeMessageRecord(userMessage),
                         fromUserId: this.userId,
                     });
 
                     // 添加 AI 消息
-                    this.messageList.push({
-                        ...aiMessage,
-                        fromUserId: 0,
-                    });
+                    this.messageList.push(
+                        normalizeMessageRecord(
+                            {
+                                ...aiMessage,
+                                fromUserId: 0,
+                            },
+                            userContent,
+                        ),
+                    );
 
                     // 清空输入框
                     this.inputContent = "";

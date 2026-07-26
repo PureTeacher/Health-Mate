@@ -68,6 +68,14 @@
 </template>
 
 <script>
+import {
+    HEALTH_ADVISOR_TITLE,
+    buildHealthAdvisorMessagePayload,
+    normalizeAiConversationTitle,
+    normalizeMessageRecord,
+    sanitizeLegacyAiResponse,
+} from "@/common/ai/healthAdvisor.js";
+
 export default {
     data() {
         return {
@@ -78,7 +86,7 @@ export default {
             // 对话ID
             conversationId: "",
             // 对话标题
-            conversationTitle: "轻益点智能顾问",
+            conversationTitle: HEALTH_ADVISOR_TITLE,
             // 我的头像
             myAvatar: "/static/logo3.png",
             // 朋友头像
@@ -99,8 +107,8 @@ export default {
         // 从历史页面返回时会传入 conversationId
         if (options && options.conversationId) {
             this.conversationId = options.conversationId;
-            this.conversationTitle = decodeURIComponent(
-                options.title || "对话",
+            this.conversationTitle = normalizeAiConversationTitle(
+                decodeURIComponent(options.title || HEALTH_ADVISOR_TITLE),
             );
         }
     },
@@ -118,7 +126,7 @@ export default {
             // 立即清空消息列表，避免闪烁显示旧消息
             this.msgList = [];
             this.conversationId = data.conversationId;
-            this.conversationTitle = data.title;
+            this.conversationTitle = normalizeAiConversationTitle(data.title);
             this.scrollTop = 0;
             // 然后加载新对话的消息
             this.loadExistingConversation();
@@ -137,11 +145,14 @@ export default {
             // 创建新对话会话
             try {
                 const createRes = await this.$api.createConversation({
-                    title: "新对话",
+                    title: HEALTH_ADVISOR_TITLE,
+                    scene: "light_benefit_health_advisor",
                 });
                 if (createRes.code === 200) {
                     this.conversationId = createRes.data.id;
-                    this.conversationTitle = createRes.data.title;
+                    this.conversationTitle = normalizeAiConversationTitle(
+                        createRes.data.title,
+                    );
                 } else {
                     uni.$u.toast(createRes.message || "创建对话失败");
                     return;
@@ -179,9 +190,12 @@ export default {
                 }
 
                 const data = result.data;
-                this.msgList = (data.records || []).reverse();
+                const records = data.records || [];
+                this.msgList = records
+                    .reverse()
+                    .map((message) => normalizeMessageRecord(message));
 
-                if (data.records.length < 50) {
+                if (records.length < 50) {
                     this.isEnd = true;
                 }
 
@@ -245,15 +259,19 @@ export default {
                 );
 
                 // 调用 API 获取 AI 回复（完整响应）
-                const result = await this.$api.message({
-                    msgContent: userContent,
-                    msgType: "text",
-                    conversationId: this.conversationId,
-                });
+                const result = await this.$api.message(
+                    buildHealthAdvisorMessagePayload(
+                        userContent,
+                        this.conversationId,
+                    ),
+                );
 
                 if (result && result.data && result.data.aiMessage) {
                     const aiMsg = result.data.aiMessage;
-                    const fullContent = aiMsg.msgContent || "";
+                    const fullContent = sanitizeLegacyAiResponse(
+                        aiMsg.msgContent || "",
+                        userContent,
+                    );
 
                     // 清除思考中标记
                     if (aiMsgIndex !== -1 && this.msgList[aiMsgIndex]) {
@@ -341,7 +359,7 @@ export default {
         startNewConversation() {
             // 检查是否已经是新对话
             if (
-                this.conversationTitle === "新对话" &&
+                this.conversationTitle === HEALTH_ADVISOR_TITLE &&
                 this.msgList.length === 0
             ) {
                 uni.$u.toast("已处于新对话");
@@ -422,7 +440,9 @@ export default {
                     this.conversationId,
                 );
                 if (result && result.code === 200) {
-                    const newTitle = result.data.title || "新对话";
+                    const newTitle = normalizeAiConversationTitle(
+                        result.data.title,
+                    );
                     this.conversationTitle = newTitle;
                     console.log("✓ 对话标题已生成:", newTitle);
                 } else {

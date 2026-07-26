@@ -1,6 +1,9 @@
 {
   "name": "light-benefit",
   "version": "1.1.0",
+  "scripts": {
+    "test:ai-health-advisor": "node tests/ai-health-advisor-contract.test.mjs"
+  },
   "dependencies": {
     "@dcloudio/uni-ui": "^1.5.11",
     "@uni-ui/code-ui": "^1.4.8",
